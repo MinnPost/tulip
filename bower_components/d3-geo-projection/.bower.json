@@ -1,0 +1,11 @@
+{
+  "name": "d3-geo-projection",
+  "_cacheHeaders": {
+    "Last-Modified": "Thu, 01 Aug 2013 14:38:34 GMT",
+    "Content-Length": "43743",
+    "Content-Type": "application/x-javascript"
+  },
+  "main": "index.js",
+  "_source": "http://d3js.org/d3.geo.projection.v0.min.js",
+  "_target": "*"
+}
