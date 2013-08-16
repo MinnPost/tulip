@@ -18,7 +18,21 @@
     // Default options
     tulip.prototype.defaultOptions = {
       startManually: false,
-      templatePrefix: 'app/templates/'
+      templatePrefix: 'app/templates/',
+      projectionOptions: [
+        { value: 'albersUsa', label: 'Albers USA' },
+        { value: 'azimuthalEqualArea', label: 'Azimuthal Equal Area' },
+        { value: 'azimuthalEquidistant', label: 'Azimuthal Equidistant' },
+        { value: 'conicEqualArea', label: 'Conic Equal Area' },
+        { value: 'conicConformal', label: 'Conic Conformal' },
+        { value: 'conicEquidistant', label: 'Conic Equidistant' },
+        { value: 'equirectangular', label: 'Equirectangle' },
+        { value: 'gnomonic', label: 'Gnomonic' },
+        { value: 'mercator', label: 'Mercator' },
+        { value: 'orthographic', label: 'Orthographic' },
+        { value: 'stereographic', label: 'Stereographic' },
+        { value: 'transverseMercator', label: 'Transverse Mercator' }
+      ]
     };
     
     // Start function

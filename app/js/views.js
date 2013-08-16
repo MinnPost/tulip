@@ -66,10 +66,7 @@
         observe: 'projection',
         selectOptions: {
           collection: function() {
-            return [
-              { value: 'mercator', label: 'Mercator' },
-              { value: 'albersUsa', label: 'Albers USA' }
-            ];
+            return this.options.app.options.projectionOptions;
           }
         }
       }
