@@ -50,13 +50,17 @@
     };
     
     // Default map configuration
-    tulip.prototype.defaultMapConfig = {
-      datasource: 'data/us-counties.topo.json'
+    tulip.prototype.defaultMapConfig = function() {
+      // Get the default config values form the Simple Map library
+      var smd = SimpleMapD3();
+      var config = smd.options;
+      config.datasource = 'data/us-counties.topo.json';
+      return config;
     };
     
     // Render parts
     tulip.prototype.render = function() {
-      this.mapConfig = new this.TulipMapConfigurationModel(this.defaultMapConfig, {
+      this.mapConfig = new this.TulipMapConfigurationModel(this.defaultMapConfig(), {
         app: this
       });
       this.appView = new this.TulipMainAppView({

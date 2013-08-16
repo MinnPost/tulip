@@ -18,7 +18,7 @@
     // Main template render
     render: function() {
       this.$el.html(_.template(this.templates['application.html'])({ }));
-      this.renderConfig().renderMap();
+      this.renderMap().renderConfig();
       return this;
     },
     
@@ -26,7 +26,9 @@
     renderConfig: function() {
       this.configView = new this.options.app.TulipConfigView({
         el: this.$el.selector + ' .tulip-config-container',
-        app: this.options.app
+        app: this.options.app,
+        map: this.mapView,
+        model: this.options.app.mapConfig
       }).render();
       return this;
     },
@@ -49,15 +51,34 @@
     model: Tulip.prototype.TulipMapConfigurationModel,
   
     initialize: function(options) {
+      var thisView = this;
       this.templates = options.app.templates;
+      this.model.on('change', function() {
+        thisView.options.map.render();
+      });
     },
     
     events: {
     },
     
+    bindings: {
+      '.tulip-configuration-projection': {
+        observe: 'projection',
+        selectOptions: {
+          collection: function() {
+            return [
+              { value: 'mercator', label: 'Mercator' },
+              { value: 'albersUsa', label: 'Albers USA' }
+            ];
+          }
+        }
+      }
+    },
+    
     // Main template render
     render: function() {
       this.$el.html(_.template(this.templates['configuration.html'])({ }));
+      this.stickit();
       return this;
     }
   });
