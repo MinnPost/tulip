@@ -1,0 +1,19 @@
+{
+  "name": "tulip",
+  "version": "0.0.1",
+  "main": "app/js/app.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "git://github.com/documentcloud/backbone.git#~1.0.0",
+    "jquery": "git://github.com/components/jquery.git#~2.0.3",
+    "simple-map-d3": "git://github.com/MinnPost/simple-map-d3.git#master",
+    "topojson": "git://github.com/mbostock/topojson.git#~1.2.3",
+    "underscore": "git://github.com/documentcloud/underscore.git#~1.5.1"
+  }
+}
