@@ -1,0 +1,13 @@
+{
+  "name": "pancakejs",
+  "homepage": "https://github.com/veltman/pancakejs",
+  "_release": "226770d02d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "226770d02dcb12831ed32e046d7a3527a2e89321"
+  },
+  "_source": "https://github.com/veltman/pancakejs.git",
+  "_target": "*",
+  "_direct": true
+}

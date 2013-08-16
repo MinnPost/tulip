@@ -7,7 +7,7 @@
 }
 
 .tulip-map-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 66.66%;
@@ -39,3 +39,7 @@
 .tulip-configuration-property {
   margin-bottom: 1em;
 }
+
+/**
+ * Override for SMD
+ */

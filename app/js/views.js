@@ -59,6 +59,7 @@
     },
     
     events: {
+      'click .tulip-export-image': 'handleExportImage'
     },
     
     bindings: {
@@ -116,6 +117,25 @@
       this.$el.html(_.template(this.templates['configuration.html'])({ }));
       this.stickit();
       return this;
+    },
+    
+    // Handle export image
+    handleExportImage: function(e) {
+      e.preventDefault();
+      var $target = $(e.currentTarget);
+      var id = _.uniqueId('tulip-id-');
+      var map = this.options.map;
+      var image;
+      
+      // Hack to get legend to look ok for now
+      map.$mapEl.find('svg .smd-legend-container').css({
+        'fill': '#FFFFFF',
+        'stroke': '#222222'
+      });
+      
+      map.$mapEl.find('svg').attr('id', id);
+      image = Pancake(id);
+      image.download('map.png');
     }
   });
 
