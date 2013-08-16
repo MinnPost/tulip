@@ -5,9 +5,36 @@
     <h2>Load data</h2>
 
     <h2>Projection</h2>
-    <select class="tulip-configuration-projection">
-    </select>
-    <p class="help">Not all these projections will work out of the box.</p>
+    
+    <div class="tulip-configuration-property">
+      <select class="tulip-configuration-projection">
+      </select>
+      <p class="tulip-help">Not all these projections will work out of the box.</p>
+    </div>
+
+    <h2>Colors</h2>
+    
+    <div class="tulip-configuration-property">
+      <input type="checkbox" class="tulip-configuration-colorOn" name="tulip-configuration-colorOn" />
+      <label for="tulip-configuration-colorOn">Color on</label>
+    </div>
+    
+    <div class="tulip-configuration-property">
+      <label for"tulip-configuration-colorProperty">Color property: </label>
+      <select class="tulip-configuration-colorProperty" name="tulip-configuration-colorProperty">
+      </select>
+    </div>
+    
+    <div class="tulip-configuration-property">
+      <label for"tulip-configuration-colorSet">Color set: </label>
+      <select class="tulip-configuration-colorSet" name="tulip-configuration-colorSet">
+      </select>
+    </div>
+    
+    <div class="tulip-configuration-property">
+      <input type="checkbox" class="tulip-configuration-colorReverse" name="tulip-configuration-colorReverse" />
+      <label for="tulip-configuration-colorReverse">Color reverse</label>
+    </div>
     
   </form>
 </div>

@@ -66,9 +66,48 @@
         observe: 'projection',
         selectOptions: {
           collection: function() {
-            return this.options.app.options.projectionOptions;
+            return this.model.get('projectionOptions');
           }
         }
+      },
+      '.tulip-configuration-colorOn': {
+        observe: 'colorOn'
+      },
+      '.tulip-configuration-colorProperty': {
+        observe: 'colorProperty',
+        selectOptions: {
+          collection: function() {
+            // Need to get current map with loaded data
+            // TODO: The data is not available until later, need
+            // to find a way to trigger this.
+            var options = [];
+            var map = this.options.map.smd;
+            
+            if (_.isObject(map.data) && _.isObject(map.data.features)) {
+              _.each(map.data.features[0].properties, function(prop, p) {
+                options.push({ value: p, label: p });
+              });
+            }
+            return options;
+          }
+        }
+      },
+      '.tulip-configuration-colorSet': {
+        observe: 'colorSet',
+        selectOptions: {
+          collection: function() {
+            var smd = SimpleMapD3();
+            var options = [];
+            
+            _.each(smd.brewer, function(set, b) {
+              options.push({ value: b, label: b });
+            });
+            return options;
+          }
+        }
+      },
+      '.tulip-configuration-colorReverse': {
+        observe: 'colorReverse'
       }
     },
     
