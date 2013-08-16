@@ -1,0 +1,31 @@
+/**
+ * Main CSS for Tulip app
+ */
+.tulip-app-container {
+  width: 100%;
+  position: relative;
+}
+
+.tulip-map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 66.66%;
+  min-height: 10em;
+}
+
+.tulip-map {
+  width: 100%;
+  height: 600px;
+}
+
+.tulip-config-container {
+  width: 33.33333%;
+  float: right;
+  border-left: 1px solid #222222;
+  min-height: 10em;
+}
+
+.tulip-configuration {
+  padding: 0 1em;
+}
