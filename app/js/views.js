@@ -140,6 +140,12 @@
       },
       '.tulip-configuration-dragOn': {
         observe: 'dragOn'
+      },
+      '.tulip-configuration-graticuleOn': {
+        observe: 'graticuleOn'
+      },
+      '.tulip-configuration-globeOn': {
+        observe: 'globeOn'
       }
     },
     

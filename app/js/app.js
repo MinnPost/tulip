@@ -57,27 +57,31 @@
       var config = smd.options;
       
       // Custom dataset
-      config.datasource = 'data/europe-population-density-geocommons.geo.json';
-      config.projection = 'azimuthalEqualArea';
-      config.colorProperty = 'population';
+      config.datasource = 'data/world-population.geo.json';
+      config.projection = 'baker';
+      config.colorProperty = 'POP2005';
+      config.graticuleOn = true;
+      config.globeOn = true;
       
       // We want to be explicit about styles as Canvg doesn't seem
       // to work well with CSS styles
       config.styles = {
         stroke: '#898989',
         'stroke-width': '.4px',
-        'stroke-opacity': '.85'
+        'stroke-opacity': '0.85'
       };
       config.stylesHover = {
         'stroke-opacity': '1',
         'stroke-width': '2px'
       };
-      config.stylesCanvas = {
+      config.stylesBackground = {
+        fill: '#FFFFFF'
       };
       config.stylesLegendContainer = {
         stroke: '#222222',
         'stroke-width': '1px',
-        'fill-opacity': '1'
+        fill: '#FFFFFF',
+        'fill-opacity': '0.85'
       };
       config.stylesLegendTitleText = {
         fill: '#222222'
@@ -86,6 +90,17 @@
         fill: '#222222'
       };
       config.stylesLegendSwatch = {
+      };
+      config.stylesGraticule = {
+        stroke: '#222222',
+        'stroke-width': '.5px',
+        fill: '#FFFFFF',
+        'stroke-opacity': '0.75'
+      };
+      config.stylesGlobe = {
+        stroke: '#222222',
+        'stroke-width': '5px',
+        fill: '#FFFFFF',
       };
       
       // Default template output
