@@ -56,6 +56,7 @@
       var smd = SimpleMapD3();
       var config = smd.options;
       
+      // Custom dataset
       config.datasource = 'data/europe-population-density-geocommons.geo.json';
       config.projection = 'azimuthalEqualArea';
       config.colorProperty = 'population';
@@ -96,6 +97,9 @@
       config.tooltipContent = function(d) {
         return _.template(config.tooltipContentTemplate)({ p: d.properties });
       };
+      
+      // Legend
+      config.legendScale = 1;
       
       return config;
     };

@@ -129,6 +129,15 @@
           };
         }
       },
+      '.tulip-configuration-legendOn': {
+        observe: 'legendOn'
+      },
+      '.tulip-configuration-legendTitle': {
+        observe: 'legendTitle'
+      },
+      '.tulip-configuration-legendScale': {
+        observe: 'legendScale'
+      },
       '.tulip-configuration-dragOn': {
         observe: 'dragOn'
       }

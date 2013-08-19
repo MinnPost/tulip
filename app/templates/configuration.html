@@ -40,7 +40,7 @@
       <p class="tulip-help">Whether to reverse the color set.</p>
     </div>
     
-    <h2>Tooltips</h2>
+    <h2>Tooltip</h2>
     
     <div class="tulip-configuration-property">
       <input type="checkbox" class="tulip-configuration-tooltipOn" name="tulip-configuration-tooltipOn" />
@@ -49,9 +49,29 @@
     </div>
     
     <div class="tulip-configuration-property">
-      <label for="tulip-configuration-tooltipContent">Tooltip content</label>
+      <label for="tulip-configuration-tooltipContent">Tooltip content:</label>
       <textarea type="checkbox" class="tulip-configuration-tooltipContent" name="tulip-configuration-tooltipContent" />
       <p class="tulip-help">The template content.  You can use <a href="http://underscorejs.org/#template">Underscore templates</a> and all properties of the feature will be in the <code>p</code> variable.</p>
+    </div>
+    
+    <h2>Legend</h2>
+    
+    <div class="tulip-configuration-property">
+      <input type="checkbox" class="tulip-configuration-legendOn" name="tulip-configuration-legendOn" />
+      <label for="tulip-configuration-legendOn">Legend on</label>
+      <p class="tulip-help">When enabled, a legend will be rendered and the following options are dependent on this.</p>
+    </div>
+    
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-legendTitle">Legend title:</label>
+      <input type="text" class="tulip-configuration-legendTitle" name="tulip-configuration-legendTitle" />
+      <p class="tulip-help">The title of the legend container.</p>
+    </div>
+    
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-legendScale">Legend scale:</label>
+      <input type="text" class="tulip-configuration-legendScale" name="tulip-configuration-legendScale" />
+      <p class="tulip-help">The size scale of the legend.</p>
     </div>
     
     <h2>Interactions</h2>
