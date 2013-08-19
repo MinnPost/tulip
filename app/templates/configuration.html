@@ -26,7 +26,16 @@
         <input type="text" class="tulip-configuration-height" name="tulip-configuration-height" />
       </div>
     </div>
-    <p class="tulip-help">Use valid CSS styles, like 90%, 300px, or 10em.  You can use 100% or auto for the height and the map will fill the window.</p>
+    
+    <div class="tulip-configuration-property">
+      <p class="tulip-help">Use valid CSS styles, like 90%, 300px, or 10em.  You can use 100% or auto for the height and the map will fill the window.</p>
+    </div>
+      
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-stylesBackground">Background styles:</label>
+      <input type="text" class="tulip-configuration-stylesBackground" name="tulip-configuration-stylesBackground" />
+      <p class="tulip-help">SVG styles for background container.</p>
+    </div>
 
     <h2>Projection</h2>
     
@@ -54,6 +63,20 @@
         <label for="tulip-configuration-rotation2">R:</label>
         <input type="text" class="tulip-configuration-rotation2" name="tulip-configuration-rotation2" />
       </div>
+    </div>
+    
+    <h2>Features</h2>
+    
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-styles">Feature styles:</label>
+      <input type="text" class="tulip-configuration-styles" name="tulip-configuration-styles" />
+      <p class="tulip-help">SVG styles for each map feature.</p>
+    </div>
+    
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-stylesHover">Feature styles hover:</label>
+      <input type="text" class="tulip-configuration-stylesHover" name="tulip-configuration-stylesHover" />
+      <p class="tulip-help">SVG styles for each map feature on hover.</p>
     </div>
 
     <h2>Colors</h2>
@@ -130,6 +153,30 @@
       <input type="text" class="tulip-configuration-legendFormatter" name="tulip-configuration-legendFormatter" />
       <p class="tulip-help">The formatter for the legend values, refer to the <a target="_blank" href="https://github.com/mbostock/d3/wiki/Formatting">D3.format</a> function.</p>
     </div>
+      
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-stylesLegendContainer">Legend container styles:</label>
+      <input type="text" class="tulip-configuration-stylesLegendContainer" name="tulip-configuration-stylesLegendContainer" />
+      <p class="tulip-help">SVG styles for legend container.</p>
+    </div>
+      
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-stylesLegendTitleText">Legend title styles:</label>
+      <input type="text" class="tulip-configuration-stylesLegendTitleText" name="tulip-configuration-stylesLegendTitleText" />
+      <p class="tulip-help">SVG styles for legend title.</p>
+    </div>
+      
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-stylesLegendText">Legend text styles:</label>
+      <input type="text" class="tulip-configuration-stylesLegendText" name="tulip-configuration-stylesLegendText" />
+      <p class="tulip-help">SVG styles for legend text.</p>
+    </div>
+      
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-stylesLegendSwatch">Legend swatch styles:</label>
+      <input type="text" class="tulip-configuration-stylesLegendSwatch" name="tulip-configuration-stylesLegendSwatch" />
+      <p class="tulip-help">SVG styles for legend swatches.</p>
+    </div>
     
     <h2>Interactions</h2>
     
@@ -146,11 +193,23 @@
       <label for="tulip-configuration-graticuleOn">Graticule on</label>
       <p class="tulip-help">When enabled, draws a graticule grid.</p>
     </div>
+      
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-stylesGraticule">Graticule styles:</label>
+      <input type="text" class="tulip-configuration-stylesGraticule" name="tulip-configuration-stylesGraticule" />
+      <p class="tulip-help">SVG styles for graticule.</p>
+    </div>
     
     <div class="tulip-configuration-property">
       <input type="checkbox" class="tulip-configuration-globeOn" name="tulip-configuration-globeOn" />
       <label for="tulip-configuration-globeOn">Globe on</label>
       <p class="tulip-help">When enabled, draws a globe outline.</p>
+    </div>
+      
+    <div class="tulip-configuration-property">
+      <label for="tulip-configuration-stylesGlobe">Globe styles:</label>
+      <input type="text" class="tulip-configuration-stylesGlobe" name="tulip-configuration-stylesGlobe" />
+      <p class="tulip-help">SVG styles for globe.</p>
     </div>
     
     <h2>Export</h2>

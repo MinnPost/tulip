@@ -83,6 +83,16 @@
         observe: 'height',
         events: ['blur', 'change', 'cut', 'paste']
       },
+      '.tulip-configuration-stylesBackground': {
+        observe: 'stylesBackground',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return JSON.stringify(value);
+        },
+        onSet: function(value, options) {
+          return JSON.parse(value);
+        }
+      },
       '.tulip-configuration-projection': {
         observe: 'projection',
         selectOptions: {
@@ -125,6 +135,26 @@
           var rotation = _.clone(this.model.get('rotation'));
           rotation[2] = parseFloat(value);
           return rotation;
+        }
+      },
+      '.tulip-configuration-styles': {
+        observe: 'styles',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return JSON.stringify(value);
+        },
+        onSet: function(value, options) {
+          return JSON.parse(value);
+        }
+      },
+      '.tulip-configuration-stylesHover': {
+        observe: 'stylesHover',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return JSON.stringify(value);
+        },
+        onSet: function(value, options) {
+          return JSON.parse(value);
         }
       },
       '.tulip-configuration-colorOn': {
@@ -209,6 +239,46 @@
           return d3.format(value);
         }
       },
+      '.tulip-configuration-stylesLegendContainer': {
+        observe: 'stylesLegendContainer',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return JSON.stringify(value);
+        },
+        onSet: function(value, options) {
+          return JSON.parse(value);
+        }
+      },
+      '.tulip-configuration-stylesLegendTitleText': {
+        observe: 'stylesLegendTitleText',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return JSON.stringify(value);
+        },
+        onSet: function(value, options) {
+          return JSON.parse(value);
+        }
+      },
+      '.tulip-configuration-stylesLegendText': {
+        observe: 'stylesLegendText',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return JSON.stringify(value);
+        },
+        onSet: function(value, options) {
+          return JSON.parse(value);
+        }
+      },
+      '.tulip-configuration-stylesLegendSwatch': {
+        observe: 'stylesLegendSwatch',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return JSON.stringify(value);
+        },
+        onSet: function(value, options) {
+          return JSON.parse(value);
+        }
+      },
       '.tulip-configuration-dragOn': {
         observe: 'dragOn'
       },
@@ -217,6 +287,26 @@
       },
       '.tulip-configuration-globeOn': {
         observe: 'globeOn'
+      },
+      '.tulip-configuration-stylesGraticule': {
+        observe: 'stylesGraticule',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return JSON.stringify(value);
+        },
+        onSet: function(value, options) {
+          return JSON.parse(value);
+        }
+      },
+      '.tulip-configuration-stylesGlobe': {
+        observe: 'stylesGlobe',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return JSON.stringify(value);
+        },
+        onSet: function(value, options) {
+          return JSON.parse(value);
+        }
       }
     },
     
