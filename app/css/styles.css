@@ -33,6 +33,11 @@
   padding: 0 1em;
 }
 
+.tulip-beta {
+  font-size: .5em;
+  color: #989898;
+}
+
 .tulip-help {
   margin: .5em 0 0 0;
   font-size: .75em;
@@ -61,6 +66,13 @@
   font-size: .85em;
 }
 
+.tulip-configuration footer {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #BDBDBD;
+  color: #989898;
+  margin-bottom: 2em;
+}
 
 
 /**
