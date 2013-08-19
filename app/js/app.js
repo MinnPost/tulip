@@ -87,6 +87,16 @@
       config.stylesLegendSwatch = {
       };
       
+      // Default template output
+      config.tooltipContentTemplate = ' \
+<% _.each(p, function(prop, name) { %> \
+  <%= name %>: <%= prop %> <br /> \
+<% }) %> \
+      ';
+      config.tooltipContent = function(d) {
+        return _.template(config.tooltipContentTemplate)({ p: d.properties });
+      };
+      
       return config;
     };
     

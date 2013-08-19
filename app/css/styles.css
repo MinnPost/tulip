@@ -40,6 +40,10 @@
   margin-bottom: 1em;
 }
 
+.tulip-configuration label {
+  color: #222222;
+}
+
 .tulip-configuration select {
   max-width: 100%;
 }
@@ -47,6 +51,14 @@
 .tulip-configuration input {
   max-width: 100%;
 }
+
+.tulip-configuration textarea {
+  width: 100%;
+  min-height: 5em;
+  font-size: .85em;
+}
+
+
 
 /**
  * Override for SMD

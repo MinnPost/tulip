@@ -116,6 +116,19 @@
       '.tulip-configuration-tooltipOn': {
         observe: 'tooltipOn'
       },
+      '.tulip-configuration-tooltipContent': {
+        observe: 'tooltipContent',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return this.model.get('tooltipContentTemplate');
+        },
+        onSet: function(value, options) {
+          this.model.set('tooltipContentTemplate', value, { silent: true });
+          return function(d) {
+            return _.template(value)({ p: d.properties });
+          };
+        }
+      },
       '.tulip-configuration-dragOn': {
         observe: 'dragOn'
       }
