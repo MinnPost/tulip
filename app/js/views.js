@@ -112,6 +112,12 @@
       },
       '.tulip-configuration-colorReverse': {
         observe: 'colorReverse'
+      },
+      '.tulip-configuration-tooltipOn': {
+        observe: 'tooltipOn'
+      },
+      '.tulip-configuration-dragOn': {
+        observe: 'dragOn'
       }
     },
     

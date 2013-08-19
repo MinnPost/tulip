@@ -40,6 +40,14 @@
   margin-bottom: 1em;
 }
 
+.tulip-configuration select {
+  max-width: 100%;
+}
+
+.tulip-configuration input {
+  max-width: 100%;
+}
+
 /**
  * Override for SMD
  */

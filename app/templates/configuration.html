@@ -9,7 +9,7 @@
     <div class="tulip-configuration-property">
       <select class="tulip-configuration-projection">
       </select>
-      <p class="tulip-help">Not all these projections will work out of the box.</p>
+      <p class="tulip-help">Map projections define how the surface of the earth is displayed.  The purpose of your map should drive the more appropriate projections.</p>
     </div>
 
     <h2>Colors</h2>
@@ -17,24 +17,45 @@
     <div class="tulip-configuration-property">
       <input type="checkbox" class="tulip-configuration-colorOn" name="tulip-configuration-colorOn" />
       <label for="tulip-configuration-colorOn">Color on</label>
+      <p class="tulip-help">When enabled, map features will be colored by a value in the data.  The following options are dependent on this one.</p>
     </div>
     
     <div class="tulip-configuration-property">
       <label for"tulip-configuration-colorProperty">Color property: </label>
       <select class="tulip-configuration-colorProperty" name="tulip-configuration-colorProperty">
       </select>
+      <p class="tulip-help">The property in the data source that will determine how the map is colored.</p>
     </div>
     
     <div class="tulip-configuration-property">
       <label for"tulip-configuration-colorSet">Color set: </label>
       <select class="tulip-configuration-colorSet" name="tulip-configuration-colorSet">
       </select>
+      <p class="tulip-help">The set of colors to use.</p>
     </div>
     
     <div class="tulip-configuration-property">
       <input type="checkbox" class="tulip-configuration-colorReverse" name="tulip-configuration-colorReverse" />
       <label for="tulip-configuration-colorReverse">Color reverse</label>
+      <p class="tulip-help">Whether to reverse the color set.</p>
     </div>
+    
+    <h2>Tooltips</h2>
+    
+    <div class="tulip-configuration-property">
+      <input type="checkbox" class="tulip-configuration-tooltipOn" name="tulip-configuration-tooltipOn" />
+      <label for="tulip-configuration-tooltipOn">Tooltip on</label>
+      <p class="tulip-help">When enabled, tooltips will appear on the map when a feature is hovered over.</p>
+    </div>
+    
+    <h2>Interactions</h2>
+    
+    <div class="tulip-configuration-property">
+      <input type="checkbox" class="tulip-configuration-dragOn" name="tulip-configuration-dragOn" />
+      <label for="tulip-configuration-dragOn">Drag on</label>
+      <p class="tulip-help">When enabled, it allows the user to drag the map around.  This can also be used with image export to have a custom view of the map.</p>
+    </div>
+    
     
     <h2>Export</h2>
     
