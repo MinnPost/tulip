@@ -57,6 +57,12 @@
       var config = smd.options;
       var exampleConfig = {};
       
+      // Width and heigh are not actually config values
+      // as the map fills the container, but these will affect
+      // the container
+      config.width = '100%';
+      config.height = '100%';
+      
       // Projection
       config.rotation = [0, 0, 0];
       
@@ -125,6 +131,9 @@
     tulip.prototype.exampleMapConfig = function() {
       var exampleConfig = {};
       exampleConfig.datasource = 'data/world-population.geo.json';
+      exampleConfig.fileName = 'world-population.geo.json';
+      exampleConfig.fileSize = '4279065';
+      exampleConfig.fileType = 'geojson';
       exampleConfig.projection = 'eckert4';
       exampleConfig.colorProperty = 'POP2005';
       exampleConfig.graticuleOn = true;

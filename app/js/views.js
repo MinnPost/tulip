@@ -75,6 +75,14 @@
       '.tulip-configuration-fileType': {
         observe: 'fileType'
       },
+      '.tulip-configuration-width': {
+        observe: 'width',
+        events: ['blur', 'change', 'cut', 'paste']
+      },
+      '.tulip-configuration-height': {
+        observe: 'height',
+        events: ['blur', 'change', 'cut', 'paste']
+      },
       '.tulip-configuration-projection': {
         observe: 'projection',
         selectOptions: {
@@ -328,12 +336,24 @@
     render: function(config) {
       var thisView = this;
       
+      // Make config
       config = _.extend(this.model.toJSON(), config);
       config.container = this.mapEl;
       
-      this.$mapEl.html('').height($(window).height());
+      // Make width height
+      this.$mapEl.css('width', config.width);
+      if (['100%', 'auto'].indexOf(config.height) >= 0) {
+        this.$mapEl.css('height', ($(window).height() - 5) + 'px');
+      }
+      else {
+        this.$mapEl.css('height', config.height);
+      }
+      
+      // Make map
+      this.$mapEl.html('');
       this.smd = new SimpleMapD3(config);
       
+      // Trigger when data is loaded
       this.smd.events.on('dataLoaded', function(smd) {
         thisView.trigger('mapDataLoaded');
       });

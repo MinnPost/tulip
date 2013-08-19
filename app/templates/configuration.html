@@ -2,7 +2,7 @@
   <h1>Tulip <span class="tulip-beta">beta</span></h1>
   
   <form class="tulip-configuration-form">
-    <h2>Load data</h2>
+    <h2>Data</h2>
     
     <div class="tulip-configuration-property">
       <div class="tulip-input-file">Drag a new GeoJSON or TopoJSON file here.</div>
@@ -12,6 +12,21 @@
         (<span class="tulip-configuration-fileType"></span>)
       </div>
     </div>
+
+    <h2>Container</h2>
+    
+    <div class="tulip-configuration-group cf">
+      <div class="tulip-configuration-property tulip-configuration-group-50">
+        <label for="tulip-configuration-width">Width:</label>
+        <input type="text" class="tulip-configuration-width" name="tulip-configuration-width" />
+      </div>
+      
+      <div class="tulip-configuration-property tulip-configuration-group-50">
+        <label for="tulip-configuration-height">Height:</label>
+        <input type="text" class="tulip-configuration-height" name="tulip-configuration-height" />
+      </div>
+    </div>
+    <p class="tulip-help">Use valid CSS styles, like 90%, 300px, or 10em.  You can use 100% or auto for the height and the map will fill the window.</p>
 
     <h2>Projection</h2>
     
