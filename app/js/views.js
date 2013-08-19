@@ -146,6 +146,16 @@
       '.tulip-configuration-legendScale': {
         observe: 'legendScale'
       },
+      '.tulip-configuration-legendFormatter': {
+        observe: 'legendFormatter',
+        onGet: function(value, options) {
+          return this.model.get('legendFormatterString');
+        },
+        onSet: function(value, options) {
+          this.model.set('legendFormatterString', value, { silent: true });
+          return d3.format(value);
+        }
+      },
       '.tulip-configuration-dragOn': {
         observe: 'dragOn'
       },

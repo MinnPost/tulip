@@ -55,13 +55,12 @@
       // Get the default config values form the Simple Map library
       var smd = SimpleMapD3();
       var config = smd.options;
+      var exampleConfig = {};
       
-      // Custom dataset
-      config.datasource = 'data/world-population.geo.json';
-      config.projection = 'baker';
-      config.colorProperty = 'POP2005';
-      config.graticuleOn = true;
-      config.globeOn = true;
+      // Formatter is a function, so be explicit about
+      // the way this application handles that
+      config.legendFormatterString = ',';
+      config.legendFormatter = d3.format(config.legendFormatterString);
       
       // We want to be explicit about styles as Canvg doesn't seem
       // to work well with CSS styles
@@ -115,6 +114,22 @@
       
       // Legend
       config.legendScale = 1;
+      
+      // Make example
+      config.datasource = 'data/world-population.geo.json';
+      config.projection = 'eckert4';
+      config.colorProperty = 'POP2005';
+      config.graticuleOn = true;
+      config.globeOn = true;
+      config.colorOn = true;
+      config.legendFormatterString = ',f0';
+      config.legendTitle = '2005 Population';
+      config.legendFormatter = d3.format(config.legendFormatterString);
+      config.tooltipContentTemplate = '<strong><%= p.NAME %></strong> <br> Population: <%= d3.format(",f0")(p.POP2005) %>';
+      config.tooltipContent = function(d) {
+        return _.template(config.tooltipContentTemplate)({ p: d.properties });
+      };
+      config = _.extend(config, exampleConfig);
       
       return config;
     };
