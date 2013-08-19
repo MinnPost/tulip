@@ -13,11 +13,11 @@
     "d3": "git://github.com/mbostock/d3.git#~3.2.8"
   },
   "homepage": "https://github.com/MinnPost/simple-map-d3",
-  "_release": "16e4b97a64",
+  "_release": "d06f567daf",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "16e4b97a64ffbed54e7dc61c61f230014265d47b"
+    "commit": "d06f567daffbeef0a0c87a2dbd5ab70275d25d6e"
   },
   "_source": "git://github.com/MinnPost/simple-map-d3.git",
   "_target": "master"

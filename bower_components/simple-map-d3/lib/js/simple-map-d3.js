@@ -150,6 +150,7 @@ function SimpleMapD3(o) {
       .topo()
       .drawCanvas()
       .projection()
+      .makeColorRange()
       .drawGlobe()
       .drawGraticule()
       .drawMap()
@@ -264,30 +265,33 @@ function SimpleMapD3(o) {
   // Make color range
   smd.makeColorRange = function() {
     var scaleFunc = smd.options.colorScale;
-    var values = [];
-    var d;
+    var d, domain;
+    smd.valuesSet = [];
+    
+    // Make color range
+    if (smd.options.colorOn !== true) {
+      return smd;
+    }
     
     // Get values for range
     for (d = 0; d < smd.data.features.length; d++) {
-      values.push(parseFloat(smd.data.features[d].properties[smd.options.colorProperty]));
+      smd.valuesSet.push(parseFloat(smd.data.features[d].properties[smd.options.colorProperty]));
     }
-    values.sort();
+    smd.valuesSet.sort(function(a, b) { return a - b; });
   
     // Determine range function to use
     if (typeof scaleFunc != 'function') {
       scaleFunc = d3.scale[scaleFunc];
-    }
-    
+    } 
     // Make range with appropriate values
     smd.colorRange = scaleFunc()
-      .domain(values)
+      .domain(smd.valuesSet)
       .range(smd.options.colorSet);
     
     // Clamp if can
     if (typeof smd.colorRange.clamp == 'function') {
       smd.colorRange.clamp(true);
     }
-    
     return smd;
   };
   
@@ -351,20 +355,36 @@ function SimpleMapD3(o) {
   smd.drawLegend = function() {
     var qs;
     var formatter = smd.options.legendFormatter || d3.format(',');
-    var legendSwatches;
     var unit = 10;
     var width = smd.options.legendWidth || (smd.width / 5);
     var scale = smd.options.legendScale || 1;
+    var min = d3.min(smd.valuesSet);
+    var max = d3.max(smd.valuesSet);
+    var legendSwatches = [];
+    var c;
     
     // Make sure legend is on
-    if (smd.options.legendOn !== true) {
+    if (smd.options.legendOn !== true || typeof smd.colorRange == 'undefined') {
       return smd;
     }
     
     // Specific to scale type, unfortunately
-    if (smd.options.colorScale === 'quantile' &&
-      typeof smd.colorRange != 'undefined') {
+    if (smd.options.colorScale === 'quantile') {
       legendSwatches = smd.colorRange.quantiles();
+      legendSwatches[0] = min;
+    }
+    
+    // Quantize
+    if (smd.options.colorScale === 'quantize') {
+      for (c = 0; c < smd.options.colorSet.length; c++) {
+        console.log(smd.colorRange);
+        legendSwatches.push(smd.colorRange.invertExtent(smd.options.colorSet[c])[0]);
+      }
+    }
+    
+    // Ensure we have something to make a legend with
+    if (legendSwatches.length === 0) {
+      return smd;
     }
     
     // Specific to scale type, unfortunately
@@ -422,11 +442,6 @@ function SimpleMapD3(o) {
   
   // Render
   smd.drawMap = function() {
-    // Make color range
-    if (smd.options.colorOn === true) {
-      smd.makeColorRange();
-    }
-  
     // Render paths
     smd.featureGroup
       .selectAll('path')
@@ -437,7 +452,7 @@ function SimpleMapD3(o) {
         .style(smd.options.styles)
         .attr('fill', function(d) {
           if (smd.options.colorOn === false) {
-            return smd.options.fill;
+            return smd.options.styles.fill;
           }
           else {
             return smd.colorRange(d.properties[smd.options.colorProperty]);
