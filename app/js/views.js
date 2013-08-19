@@ -56,6 +56,9 @@
       this.model.on('change', function() {
         thisView.options.map.render();
       });
+      this.options.map.on('mapDataLoaded', function() {
+        thisView.stickit();
+      });
     },
     
     events: {
@@ -127,12 +130,6 @@
       var map = this.options.map;
       var image;
       
-      // Hack to get legend to look ok for now
-      map.$mapEl.find('svg .smd-legend-container').css({
-        'fill': '#FFFFFF',
-        'stroke': '#222222'
-      });
-      
       map.$mapEl.find('svg').attr('id', id);
       image = Pancake(id);
       image.download('map.png');
@@ -156,10 +153,15 @@
     
     // Main template render
     render: function(config) {
+      var thisView = this;
+      
       config = _.extend(this.model.toJSON(), config);
       config.container = this.mapEl;
       this.$mapEl.html('').height($(window).height());
       this.smd = SimpleMapD3(config);
+      this.smd.events.on('dataLoaded.tulip', function(smd) {
+        thisView.trigger('mapDataLoaded');
+      });
       return this;
     }
   });

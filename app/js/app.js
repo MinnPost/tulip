@@ -63,7 +63,6 @@
       // We want to be explicit about styles as Canvg doesn't seem
       // to work well with CSS styles
       config.styles = {
-        fill: '#222222',
         stroke: '#898989',
         'stroke-width': '.4px',
         'stroke-opacity': '.85'
@@ -73,12 +72,11 @@
         'stroke-width': '2px'
       };
       config.stylesCanvas = {
-        'background-color': '#FFFFFF'
       };
       config.stylesLegendContainer = {
         stroke: '#222222',
         'stroke-width': '1px',
-        'fill-opacity': '0.9'
+        'fill-opacity': '1'
       };
       config.stylesLegendTitleText = {
         fill: '#222222'
