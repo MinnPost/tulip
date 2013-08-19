@@ -12,6 +12,7 @@
   left: 0;
   width: 66.66%;
   min-height: 10em;
+  z-index: -5;
 }
 
 .tulip-map {
@@ -24,6 +25,8 @@
   float: right;
   border-left: 1px solid #222222;
   min-height: 10em;
+  z-index: 10;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3), inset -1px 0 1px rgba(255,255,255,0.4);
 }
 
 .tulip-configuration {
