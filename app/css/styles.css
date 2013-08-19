@@ -6,6 +6,19 @@
   position: relative;
 }
 
+/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+.tulip-app-container .cf:before,
+.tulip-app-container .cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.tulip-app-container .cf:after {
+    clear: both;
+}
+.tulip-app-container .cf {
+    *zoom: 1;
+}
+
 .tulip-map-container {
   position: fixed;
   top: 0;
@@ -81,6 +94,16 @@
 
 .tulip-configuration .tulip-current-file {
   text-align: center;
+}
+
+.tulip-configuration .tulip-configuration-group .tulip-configuration-property {
+  width: 30%;
+  float: left;
+  margin-bottom: 0;
+}
+
+.tulip-configuration .tulip-configuration-group .tulip-configuration-property input {
+  width: 65%;
 }
 
 .tulip-configuration footer {

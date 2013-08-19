@@ -57,6 +57,9 @@
       var config = smd.options;
       var exampleConfig = {};
       
+      // Projection
+      config.rotation = [0, 0, 0];
+      
       // Formatter is a function, so be explicit about
       // the way this application handles that
       config.legendFormatterString = ',';

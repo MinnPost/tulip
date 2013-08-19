@@ -83,6 +83,42 @@
           }
         }
       },
+      '.tulip-configuration-rotation0': {
+        observe: 'rotation',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return this.model.get('rotation')[0];
+        },
+        onSet: function(value, options) {
+          var rotation = _.clone(this.model.get('rotation'));
+          rotation[0] = parseFloat(value);
+          return rotation;
+        }
+      },
+      '.tulip-configuration-rotation1': {
+        observe: 'rotation',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return this.model.get('rotation')[1];
+        },
+        onSet: function(value, options) {
+          var rotation = _.clone(this.model.get('rotation'));
+          rotation[1] = parseFloat(value);
+          return rotation;
+        }
+      },
+      '.tulip-configuration-rotation2': {
+        observe: 'rotation',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return this.model.get('rotation')[2];
+        },
+        onSet: function(value, options) {
+          var rotation = _.clone(this.model.get('rotation'));
+          rotation[2] = parseFloat(value);
+          return rotation;
+        }
+      },
       '.tulip-configuration-colorOn': {
         observe: 'colorOn'
       },
