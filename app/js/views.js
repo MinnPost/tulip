@@ -66,6 +66,15 @@
     },
     
     bindings: {
+      '.tulip-configuration-fileName': {
+        observe: 'fileName'
+      },
+      '.tulip-configuration-fileSize': {
+        observe: 'fileSize'
+      },
+      '.tulip-configuration-fileType': {
+        observe: 'fileType'
+      },
       '.tulip-configuration-projection': {
         observe: 'projection',
         selectOptions: {
@@ -171,7 +180,83 @@
     render: function() {
       this.$el.html(_.template(this.templates['configuration.html'])({ }));
       this.stickit();
+      this.handleUpload();
       return this;
+    },
+    
+    // Handle uploding of file
+    handleUpload: function() {
+      var thisView = this;
+      this.$upload = this.$el.find('.tulip-input-file');
+      
+      this.$upload.on('dragover dragenter', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(this).addClass('hovered');
+        e.originalEvent.dataTransfer.dropEffect = 'copy';
+      });
+      this.$upload.on('dragexit', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(this).removeClass('hovered');
+      });
+      this.$upload.on('drop', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var files = e.originalEvent.dataTransfer.files;
+        
+        if (files.length > 0) {
+          thisView.readFile(files[0]);
+        }
+      });
+    },
+    
+    // Read uploaded file
+    readFile: function(file) {
+      var thisView = this;
+      var reader = new FileReader();
+      
+      reader.onload = function(e) {
+        var data, type;
+        
+        try {
+          data = JSON.parse(e.target.result);
+          
+          if (_.size(data) === 0 || _.isUndefined(data.type)) {
+            return false;
+          }
+          else {
+            if (['Point', 'MultiPoint', 'LineString', 'MultiLineString', 'Polygon', 'MultiPolygon', 'GeometryCollection', 'Feature', 'FeatureCollection'].indexOf(data.type) >= 0) {
+              type = 'geojson';
+            }
+            else if (data.type === 'Topology') {
+              type = 'topology'
+            }
+            else {
+              return false;
+            }
+          }
+        }
+        catch(err) {
+          return false;            
+        }
+        
+        // Set new data
+        thisView.model.set({
+          datasource: undefined,
+          fileName: file.name,
+          fileSize: file.size,
+          fileType: type
+        }, { silent: true });
+        thisView.model.set('data', data);
+        
+        // Set color property.  Just use the first one
+        thisView.model.set('colorProperty', _.keys(thisView.options.map.smd.data.features[0].properties)[0]);
+        
+        thisView.stickit();
+      };
+      
+      reader.readAsText(file);
     },
     
     // Handle export image
@@ -209,9 +294,11 @@
       
       config = _.extend(this.model.toJSON(), config);
       config.container = this.mapEl;
+      
       this.$mapEl.html('').height($(window).height());
-      this.smd = SimpleMapD3(config);
-      this.smd.events.on('dataLoaded.tulip', function(smd) {
+      this.smd = new SimpleMapD3(config);
+      
+      this.smd.events.on('dataLoaded', function(smd) {
         thisView.trigger('mapDataLoaded');
       });
       return this;

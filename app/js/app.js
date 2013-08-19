@@ -115,30 +115,35 @@
       // Legend
       config.legendScale = 1;
       
-      // Make example
-      config.datasource = 'data/world-population.geo.json';
-      config.projection = 'eckert4';
-      config.colorProperty = 'POP2005';
-      config.graticuleOn = true;
-      config.globeOn = true;
-      config.colorOn = true;
-      config.legendFormatterString = ',f0';
-      config.legendTitle = '2005 Population';
-      config.legendFormatter = d3.format(config.legendFormatterString);
-      config.tooltipContentTemplate = '<strong><%= p.NAME %></strong> <br> Population: <%= d3.format(",f0")(p.POP2005) %>';
-      config.tooltipContent = function(d) {
-        return _.template(config.tooltipContentTemplate)({ p: d.properties });
-      };
-      config = _.extend(config, exampleConfig);
-      
       return config;
     };
     
+    // Example config
+    tulip.prototype.exampleMapConfig = function() {
+      var exampleConfig = {};
+      exampleConfig.datasource = 'data/world-population.geo.json';
+      exampleConfig.projection = 'eckert4';
+      exampleConfig.colorProperty = 'POP2005';
+      exampleConfig.graticuleOn = true;
+      exampleConfig.globeOn = true;
+      exampleConfig.colorOn = true;
+      exampleConfig.legendTitle = '2005 Population';
+      exampleConfig.legendFormatterString = ',f0';
+      exampleConfig.legendFormatter = d3.format(exampleConfig.legendFormatterString);
+      exampleConfig.tooltipContentTemplate = '<strong><%= p.NAME %></strong> <br> Population: <%= d3.format(",f0")(p.POP2005) %>';
+      exampleConfig.tooltipContent = function(d) {
+        return _.template(exampleConfig.tooltipContentTemplate)({ p: d.properties });
+      };
+      
+      return exampleConfig;
+    },
+    
     // Render parts
     tulip.prototype.render = function() {
-      this.mapConfig = new this.TulipMapConfigurationModel(this.defaultMapConfig(), {
-        app: this
-      });
+      this.mapConfig = new this.TulipMapConfigurationModel(
+        _.extend(this.defaultMapConfig(), this.exampleMapConfig()), 
+        { app: this }
+      );
       this.appView = new this.TulipMainAppView({
         el: this.el,
         app: this

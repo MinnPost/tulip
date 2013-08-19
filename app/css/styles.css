@@ -66,6 +66,23 @@
   font-size: .85em;
 }
 
+.tulip-configuration .tulip-input-file {
+  border: 1px solid #989898;
+  padding: 1em 2em;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+.tulip-configuration .tulip-input-file:hover,
+.tulip-configuration .tulip-input-file.hovered {
+  border: 1px dashed #989898;
+}
+
+.tulip-configuration .tulip-current-file {
+  text-align: center;
+}
+
 .tulip-configuration footer {
   margin-top: 2em;
   padding-top: 1em;
