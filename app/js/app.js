@@ -40,6 +40,7 @@
       _.each([
         'application.html',
         'configuration.html',
+        'loading.html'
       ], function(t) {
         var defer = $.get(thisTulip.options.templatePrefix + t);
         $.when(defer).done(function(template) {

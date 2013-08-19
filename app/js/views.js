@@ -332,6 +332,11 @@
     events: {
     },
     
+    // Loading
+    loading: function() {
+      this.$mapEl.html(_.template(this.templates['loading.html'])({ }));
+    },
+    
     // Main template render
     render: function(config) {
       var thisView = this;
