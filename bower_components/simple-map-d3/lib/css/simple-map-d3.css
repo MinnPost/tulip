@@ -22,10 +22,16 @@
   cursor: -moz-grab;
   cursor: -webkit-grab;
 }
+
 .smd-canvas.smd-draggable.dragging {
   cursor: grabbing;
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;
+}
+
+.smd-background {
+  fill: transparent;
+  stroke: 0;
 }
 
 .smd-path {
@@ -52,4 +58,17 @@
 
 .smd-legend-label {
   font-weight: bold;
+}
+
+.smd-graticule {
+  fill: none;
+  stroke: #222222;
+  stroke-width: .5px;
+  stroke-opacity: .75;
+}
+
+.smd-globe {
+  fill: none;
+  stroke: #222222;
+  stroke-width: 3px;
 }
