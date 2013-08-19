@@ -6,6 +6,14 @@
   position: relative;
 }
 
+.tulip-u {
+  color: transparent;
+  background: transparent url('../images/tulip-top.svg') center .35em no-repeat;
+  background-size: contain;
+  width: 1em;
+  height: 1em;
+}
+
 /* http://nicolasgallagher.com/micro-clearfix-hack/ */
 .tulip-app-container .cf:before,
 .tulip-app-container .cf:after {
