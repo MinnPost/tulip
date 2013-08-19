@@ -70,7 +70,7 @@
         observe: 'projection',
         selectOptions: {
           collection: function() {
-            return this.model.get('projectionOptions');
+            return this.model.projectionOptions;
           }
         }
       },
@@ -107,6 +107,14 @@
               options.push({ value: b, label: b });
             });
             return options;
+          }
+        }
+      },
+      '.tulip-configuration-colorScale': {
+        observe: 'colorScale',
+        selectOptions: {
+          collection: function() {
+            return this.model.colorScaleOptions;
           }
         }
       },

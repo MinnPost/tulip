@@ -34,8 +34,19 @@
         projectionOptions = options.app.options.projectionOptions;
       }
       
-      this.set('projectionOptions', projectionOptions);
+      this.projectionOptions = projectionOptions;
     },
+    
+    // Cole scarel options
+    colorScaleOptions: [
+      { value: 'quantile', label: 'Quantiles' },
+      { value: 'linear', label: 'Linear' },
+      { value: 'identity', label: 'Identity' },
+      { value: 'sqrt', label: 'Square Root' },
+      { value: 'pow', label: 'Power' },
+      { value: 'log', label: 'Logarithmic' },
+      { value: 'quantize', label: 'Quantize' }
+    ],
     
     // Extended projection options
     projectionOptionsExtended: [
