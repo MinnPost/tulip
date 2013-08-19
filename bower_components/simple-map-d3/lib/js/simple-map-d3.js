@@ -22,10 +22,15 @@ function SimpleMapD3(o) {
       return output;
     },
     projection: 'albersUsa',
-    styles: {},
     legendFormatter: d3.format(','),
     legendOn: true,
     legendTitle: 'Legend',
+    styles: {},
+    stylesHover: {},
+    stylesLegendContainer: {},
+    stylesLegendTitleText: {},
+    stylesLegendText: {},
+    stylesLegendSwatch: {},
     dragOn: false
   };
   
@@ -101,6 +106,9 @@ function SimpleMapD3(o) {
     if (smd.options.colorReverse === true) {
       smd.options.colorSet = smd.options.colorSet.reverse();
     }
+    
+    // Create event dispatcher using D3
+    smd.events = d3.dispatch('dataLoaded', 'rendered');
 
     // Check if data was given, or if data source was given
     if (smd.options.data === Object(smd.options.data)) {
@@ -129,7 +137,15 @@ function SimpleMapD3(o) {
     if (smd.data === void 0) {
       smd.data = data;
     }
+    
+    // Call data loaded event
+    smd.events.dataLoaded(smd);
+    
+    // Render everything
     smd.topo().canvas().projection().render().fit().legend().drag();
+    
+    // Call rendered event
+    smd.events.rendered(smd);
     
     return smd;
   };
@@ -253,7 +269,7 @@ function SimpleMapD3(o) {
   };
   
   // Dragging functinoality
-  smd.dragging = false,
+  smd.dragging = false;
   smd.drag = function() {
     smd.dragIt = d3.behavior.drag()
       .on('drag', function(d) {
@@ -308,13 +324,15 @@ function SimpleMapD3(o) {
         .attr('width', width)
         .attr('height', legendSwatches.length * (unit * 2) + (unit * 3))
         .attr('x', unit)
-        .attr('y', unit);
+        .attr('y', unit)
+        .style(smd.options.stylesLegendContainer);
       smd.legendGroup.append('text')
         .attr('class', 'smd-legend-label')
         .attr('font-size', unit)
         .attr('x', (unit * 2))
         .attr('y', (unit * 3))
-        .text(smd.options.legendTitle);
+        .text(smd.options.legendTitle)
+        .style(smd.options.stylesLegendTitleText);
       
       // Add colors swatches
       smd.legendGroup
@@ -326,6 +344,7 @@ function SimpleMapD3(o) {
           .attr('height', unit)
           .attr('x', (unit * 2))
           .attr('y', function(d, i) { return (i * unit * 2) + (unit * 4); })
+          .style(smd.options.stylesLegendSwatch)
           .style('fill', function(d, i) { return smd.colorRange(d); });
           
       // Add text label
@@ -337,7 +356,8 @@ function SimpleMapD3(o) {
           .attr('font-size', unit)
           .attr('x', (unit * 4))
           .attr('y', function(d, i) { return (i * unit * 2) + (unit * 5 - 1); })
-          .text(function(d, i) { return '>= ' + formatter(d); });
+          .text(function(d, i) { return '>= ' + formatter(d); })
+          .style(smd.options.stylesLegendText);
       
       // Scale
       smd.legendGroup.attr('transform', 'scale(' + scale + ')');
@@ -376,6 +396,9 @@ function SimpleMapD3(o) {
               .style('display', 'block')
               .html(smd.options.tooltipContent(d));
           }
+          
+          // Styles
+          d3.select(this).style(smd.options.stylesHover);
         })
         .on('mouseout', function(d) {
           // Tooltip
@@ -383,6 +406,9 @@ function SimpleMapD3(o) {
             smd.container.select('.simple-map-d3-tooltip')
               .style('display', 'none');
           }
+          
+          // Styles
+          d3.select(this).style(smd.options.styles);
         });
         
     return smd;
