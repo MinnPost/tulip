@@ -55,9 +55,40 @@
       // Get the default config values form the Simple Map library
       var smd = SimpleMapD3();
       var config = smd.options;
+      
       config.datasource = 'data/europe-population-density-geocommons.geo.json';
       config.projection = 'azimuthalEqualArea';
       config.colorProperty = 'population';
+      
+      // We want to be explicit about styles as Canvg doesn't seem
+      // to work well with CSS styles
+      config.styles = {
+        fill: '#222222',
+        stroke: '#898989',
+        'stroke-width': '.4px',
+        'stroke-opacity': '.85'
+      };
+      config.stylesHover = {
+        'stroke-opacity': '1',
+        'stroke-width': '2px'
+      };
+      config.stylesCanvas = {
+        'background-color': '#FFFFFF'
+      };
+      config.stylesLegendContainer = {
+        stroke: '#222222',
+        'stroke-width': '1px',
+        'fill-opacity': '0.9'
+      };
+      config.stylesLegendTitleText = {
+        fill: '#222222'
+      };
+      config.stylesLegendText = {
+        fill: '#222222'
+      };
+      config.stylesLegendSwatch = {
+      };
+      
       return config;
     };
     
