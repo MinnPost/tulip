@@ -28,7 +28,7 @@
       
       if (!_.isArray(options.app.options.projectionOptions) || 
         options.app.options.projectionOptions.length === 0) {
-        projectionOptions = _.extend(projectionOptions, this.projectionOptionsExtended);
+        projectionOptions = _.union(projectionOptions, this.projectionOptionsExtended);
       }
       else {
         projectionOptions = options.app.options.projectionOptions;
