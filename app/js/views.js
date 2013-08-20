@@ -75,15 +75,15 @@
       '.tulip-configuration-fileType': {
         observe: 'fileType'
       },
-      '.tulip-configuration-width': {
+      '#tulip-configuration-width': {
         observe: 'width',
         events: ['blur', 'change', 'cut', 'paste']
       },
-      '.tulip-configuration-height': {
+      '#tulip-configuration-height': {
         observe: 'height',
         events: ['blur', 'change', 'cut', 'paste']
       },
-      '.tulip-configuration-stylesBackground': {
+      '#tulip-configuration-stylesBackground': {
         observe: 'stylesBackground',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -93,7 +93,7 @@
           return JSON.parse(value);
         }
       },
-      '.tulip-configuration-projection': {
+      '#tulip-configuration-projection': {
         observe: 'projection',
         selectOptions: {
           collection: function() {
@@ -101,7 +101,7 @@
           }
         }
       },
-      '.tulip-configuration-rotation0': {
+      '#tulip-configuration-rotation0': {
         observe: 'rotation',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -113,7 +113,7 @@
           return rotation;
         }
       },
-      '.tulip-configuration-rotation1': {
+      '#tulip-configuration-rotation1': {
         observe: 'rotation',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -125,7 +125,7 @@
           return rotation;
         }
       },
-      '.tulip-configuration-rotation2': {
+      '#tulip-configuration-rotation2': {
         observe: 'rotation',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -137,7 +137,7 @@
           return rotation;
         }
       },
-      '.tulip-configuration-styles': {
+      '#tulip-configuration-styles': {
         observe: 'styles',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -147,7 +147,7 @@
           return JSON.parse(value);
         }
       },
-      '.tulip-configuration-stylesHover': {
+      '#tulip-configuration-stylesHover': {
         observe: 'stylesHover',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -157,10 +157,10 @@
           return JSON.parse(value);
         }
       },
-      '.tulip-configuration-colorOn': {
+      '#tulip-configuration-colorOn': {
         observe: 'colorOn'
       },
-      '.tulip-configuration-colorProperty': {
+      '#tulip-configuration-colorProperty': {
         observe: 'colorProperty',
         selectOptions: {
           collection: function() {
@@ -179,7 +179,7 @@
           }
         }
       },
-      '.tulip-configuration-colorSet': {
+      '#tulip-configuration-colorSet': {
         observe: 'colorSet',
         selectOptions: {
           collection: function() {
@@ -193,7 +193,7 @@
           }
         }
       },
-      '.tulip-configuration-colorScale': {
+      '#tulip-configuration-colorScale': {
         observe: 'colorScale',
         selectOptions: {
           collection: function() {
@@ -201,13 +201,13 @@
           }
         }
       },
-      '.tulip-configuration-colorReverse': {
+      '#tulip-configuration-colorReverse': {
         observe: 'colorReverse'
       },
-      '.tulip-configuration-tooltipOn': {
+      '#tulip-configuration-tooltipOn': {
         observe: 'tooltipOn'
       },
-      '.tulip-configuration-tooltipContent': {
+      '#tulip-configuration-tooltipContent': {
         observe: 'tooltipContent',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -220,16 +220,16 @@
           };
         }
       },
-      '.tulip-configuration-legendOn': {
+      '#tulip-configuration-legendOn': {
         observe: 'legendOn'
       },
-      '.tulip-configuration-legendTitle': {
+      '#tulip-configuration-legendTitle': {
         observe: 'legendTitle'
       },
-      '.tulip-configuration-legendScale': {
+      '#tulip-configuration-legendScale': {
         observe: 'legendScale'
       },
-      '.tulip-configuration-legendFormatter': {
+      '#tulip-configuration-legendFormatter': {
         observe: 'legendFormatter',
         onGet: function(value, options) {
           return this.model.get('legendFormatterString');
@@ -239,7 +239,7 @@
           return d3.format(value);
         }
       },
-      '.tulip-configuration-stylesLegendContainer': {
+      '#tulip-configuration-stylesLegendContainer': {
         observe: 'stylesLegendContainer',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -249,7 +249,7 @@
           return JSON.parse(value);
         }
       },
-      '.tulip-configuration-stylesLegendTitleText': {
+      '#tulip-configuration-stylesLegendTitleText': {
         observe: 'stylesLegendTitleText',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -259,7 +259,7 @@
           return JSON.parse(value);
         }
       },
-      '.tulip-configuration-stylesLegendText': {
+      '#tulip-configuration-stylesLegendText': {
         observe: 'stylesLegendText',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -269,7 +269,7 @@
           return JSON.parse(value);
         }
       },
-      '.tulip-configuration-stylesLegendSwatch': {
+      '#tulip-configuration-stylesLegendSwatch': {
         observe: 'stylesLegendSwatch',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -279,16 +279,16 @@
           return JSON.parse(value);
         }
       },
-      '.tulip-configuration-dragOn': {
+      '#tulip-configuration-dragOn': {
         observe: 'dragOn'
       },
-      '.tulip-configuration-graticuleOn': {
+      '#tulip-configuration-graticuleOn': {
         observe: 'graticuleOn'
       },
-      '.tulip-configuration-globeOn': {
+      '#tulip-configuration-globeOn': {
         observe: 'globeOn'
       },
-      '.tulip-configuration-stylesGraticule': {
+      '#tulip-configuration-stylesGraticule': {
         observe: 'stylesGraticule',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
@@ -298,7 +298,7 @@
           return JSON.parse(value);
         }
       },
-      '.tulip-configuration-stylesGlobe': {
+      '#tulip-configuration-stylesGlobe': {
         observe: 'stylesGlobe',
         events: ['blur', 'change', 'cut', 'paste'],
         onGet: function(value, options) {
