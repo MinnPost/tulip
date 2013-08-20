@@ -434,6 +434,17 @@
         }));
         $picker = $this.parent().find('.tulip-attribute-picker-picker');
         
+        // Color picker
+        $picker.find('input[data-type=color]').spectrum({
+          showInput: true,
+          showPalette: _.isArray(thisView.options.app.options.palette) ? true : false,
+          palette: thisView.options.app.options.palette,
+          clickoutFiresChange: true,
+          showInitial: true,
+          showButtons: false,
+          preferredFormat: 'hex'
+        });
+        
         // Handle click
         $this.on('click focus', function(e) {
           $this.attr('disabled', 'true');

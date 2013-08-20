@@ -6,7 +6,11 @@
   position: relative;
 }
 
-.tulip-u {
+.tulip-app-container a {
+  color: #4D642D;
+}
+
+.tulip-app-container .tulip-u {
   color: transparent;
   background: transparent url('../images/tulip-top.svg') center .35em no-repeat;
   background-size: contain;
@@ -134,11 +138,41 @@
   padding: 1em;
 }
 
+.tulip-attribute-picker-picker label,
+.tulip-attribute-picker-picker input {
+  display: block;
+  float: left;
+  width: 40%;
+}
+
 .tulip-attribute-picker-picker .tulip-attribute {
   margin-bottom: .5em;
+}
+
+.tulip-attribute-picker-picker .tulip-attribute-picker-done-container {
+  text-align: right;
 }
 
 
 /**
  * Override for SMD
  */
+
+
+/**
+ * Spectrum color picker
+ */
+.tulip-app-container .sp-replacer {
+  border-color: #222222;
+}
+.tulip-app-container .sp-replacer:hover {
+  border-color: #989898;
+}
+body .sp-container {
+  background-color: #F1F1F1;
+  border-color: #989898;
+}
+body .sp-container a,
+body .sp-container a.sp-cancel {
+  color: #4D642D !important;
+}
