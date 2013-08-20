@@ -56,8 +56,13 @@
       this.model.on('change', function() {
         thisView.options.map.render();
       });
+      
       this.options.map.on('mapDataLoaded', function() {
         thisView.stickit();
+      });
+      
+      this.options.map.on('mapRendered', function() {
+        thisView.handleRender();
       });
     },
     
@@ -91,6 +96,30 @@
         },
         onSet: function(value, options) {
           return JSON.parse(value);
+        }
+      },
+      '#tulip-configuration-mapOffset0': {
+        observe: 'mapOffset',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return this.model.get('mapOffset')[0];
+        },
+        onSet: function(value, options) {
+          var mapOffset = _.clone(this.model.get('mapOffset'));
+          mapOffset[0] = parseFloat(value);
+          return mapOffset;
+        }
+      },
+      '#tulip-configuration-mapOffset1': {
+        observe: 'mapOffset',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return this.model.get('mapOffset')[1];
+        },
+        onSet: function(value, options) {
+          var mapOffset = _.clone(this.model.get('mapOffset'));
+          mapOffset[1] = parseFloat(value);
+          return mapOffset;
         }
       },
       '#tulip-configuration-projection': {
@@ -279,6 +308,30 @@
           return JSON.parse(value);
         }
       },
+      '#tulip-configuration-legendOffset0': {
+        observe: 'legendOffset',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return this.model.get('legendOffset')[0];
+        },
+        onSet: function(value, options) {
+          var legendOffset = _.clone(this.model.get('legendOffset'));
+          legendOffset[0] = parseFloat(value);
+          return legendOffset;
+        }
+      },
+      '#tulip-configuration-legendOffset1': {
+        observe: 'legendOffset',
+        events: ['blur', 'change', 'cut', 'paste'],
+        onGet: function(value, options) {
+          return this.model.get('legendOffset')[1];
+        },
+        onSet: function(value, options) {
+          var legendOffset = _.clone(this.model.get('legendOffset'));
+          legendOffset[1] = parseFloat(value);
+          return legendOffset;
+        }
+      },
       '#tulip-configuration-legendDragOn': {
         observe: 'legendDragOn'
       },
@@ -322,6 +375,24 @@
       this.stickit();
       this.handleUpload().makeAttributePicker();
       return this;
+    },
+    
+    // Handle render.  When simple map is renderd
+    handleRender: function() {
+      var thisView = this;
+      
+      // Handle dragging to update config
+      thisView.options.map.smd.dragSimple.on('dragend', function(d) {
+        var thisEl = d3.select(this);
+        var offset = [ d.x, d.y ];
+        
+        if (thisEl.classed('smd-draggable-map-group')) {
+          thisView.model.set('mapOffset', offset);
+        }
+        else {
+          thisView.model.set('legendOffset', offset);
+        }
+      });
     },
     
     // Handle uploding of file
@@ -535,6 +606,12 @@
       this.smd.events.on('dataLoaded', function(smd) {
         thisView.trigger('mapDataLoaded');
       });
+      
+      // When rendered
+      this.smd.events.on('rendered', function(smd) {
+        thisView.trigger('mapRendered');
+      });
+      
       return this;
     }
   });
