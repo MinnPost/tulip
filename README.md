@@ -18,7 +18,62 @@ Inspiration take from [ChartBuilder](https://github.com/Quartz/Chartbuilder).
 
 ## Deployment
 
-(coming soon)  The idea is that you should not fork the project; you should use it as a library in your own app.
+The idea is that you should not fork the project; you should use it as a library in your own app.
+
+Install with bower:
+
+    bower install https://github.com/MinnPost/tulip.git
+    
+Create an `index.html` page otherwise put the following in your existing page.  First add the CSS.
+
+    <link rel="stylesheet" href="bower_components/tulip/dist/tulip.libs.css">
+    <link rel="stylesheet" href="bower_components/tulip/dist/tulip.css">
+
+Then add the Javascript.
+
+    <script src="bower_components/tulip/dist/tulip.libs.js"></script>
+    <script src="bower_components/tulip/dist/tulip.js"></script>
+
+Add a container for the application.
+
+    <div class="tulip-app"></div>
+
+Then configure and start the application.
+
+    <script>
+      (function() {
+        var thisTulip = new Tulip({
+          el: '.tulip-app'
+        });
+      })();
+    </script>
+
+## Development
+
+### Prerequisites
+
+1. Install [Git](http://git-scm.com/).
+1. Install [NodeJS](http://nodejs.org/).
+1. Install [Grunt](http://gruntjs.com/): `npm install -g grunt-cli`
+1. Install [Bower](http://bower.io/): `npm install -g bower`
+
+### Install
+
+1. Check out this code with [Git](http://git-scm.com/): `git clone https://github.com/MinnPost/tulip.git`
+1. Go into the template directory: `cd tulip`
+1. Install NodeJS packages: `npm install`
+1. Install Bower components: `bower install`
+
+### Run Locally
+
+* Run: `grunt server`
+   * This will run a local webserver for development and you can view the application in your web browser at [http://localhost:8765](http://localhost:8765).
+   * This will also watch for JS changes and JSHint the files.
+   * Utilize `index.html` for development, while `index-dist.html` is used for basically testing of the built version.
+
+### Build
+
+1. Run: `grunt`
 
 ## Attribution
 
