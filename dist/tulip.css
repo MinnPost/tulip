@@ -1,0 +1,194 @@
+/*! tulip - v0.1.1 - 2013-08-20
+ * https://github.com/MinnPost/tulip
+ * Copyright (c) 2013 Alan Palazzolo; Licensed MIT
+ */
+
+/**
+ * Main CSS for Tulip app
+ */
+.tulip-app-container {
+  width: 100%;
+  position: relative;
+}
+
+.tulip-app-container a {
+  color: #4D642D;
+}
+
+.tulip-app-container .tulip-invisible {
+  display: none;
+}
+
+.tulip-app-container .tulip-u {
+  color: transparent;
+  background: transparent url('images/tulip-top.svg') center .35em no-repeat;
+  background-size: contain;
+  width: 1em;
+  height: 1em;
+}
+
+/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+.tulip-app-container .cf:before,
+.tulip-app-container .cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.tulip-app-container .cf:after {
+    clear: both;
+}
+.tulip-app-container .cf {
+    *zoom: 1;
+}
+
+.tulip-map-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 66%;
+  min-height: 10em;
+  z-index: -5;
+}
+
+.tulip-map {
+  width: 100%;
+  height: 600px;
+}
+
+.tulip-config-container {
+  width: 33.33333%;
+  float: right;
+  border-left: 1px solid #222222;
+  min-height: 10em;
+  z-index: 10;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3), inset -1px 0 1px rgba(255,255,255,0.4);
+}
+
+.tulip-configuration {
+  padding: 0 1em;
+}
+
+.tulip-beta {
+  font-size: .5em;
+  color: #989898;
+}
+
+.tulip-help {
+  margin: .5em 0 0 0;
+  font-size: .75em;
+  color: #989898;
+}
+
+.tulip-configuration-property {
+  margin-bottom: 1em;
+}
+
+.tulip-configuration label {
+  color: #222222;
+}
+
+.tulip-configuration select {
+  max-width: 100%;
+}
+
+.tulip-configuration input {
+  max-width: 100%;
+}
+
+.tulip-configuration textarea {
+  width: 100%;
+  min-height: 5em;
+  font-size: .85em;
+}
+
+.tulip-configuration .tulip-input-file {
+  border: 1px solid #989898;
+  padding: 1em 2em;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+.tulip-configuration .tulip-input-file:hover,
+.tulip-configuration .tulip-input-file.hovered {
+  border: 1px dashed #989898;
+}
+
+.tulip-configuration .tulip-current-file {
+  text-align: center;
+  color: #989898;
+}
+
+.tulip-configuration .tulip-configuration-group .tulip-configuration-property {
+  width: 30%;
+  float: left;
+  margin-bottom: 0;
+}
+
+.tulip-configuration .tulip-configuration-group .tulip-configuration-property input {
+  width: 65%;
+}
+
+.tulip-configuration .tulip-configuration-group .tulip-configuration-group-50 {
+  width: 50%;
+}
+
+.tulip-configuration footer {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #BDBDBD;
+  color: #989898;
+  margin-bottom: 2em;
+}
+
+.tulip-attribute-picker-picker {
+  display: none;
+  border: 1px solid #989898;
+  margin: .5em 0 1em 0;
+  padding: 1em;
+}
+
+.tulip-attribute-picker-label {
+  padding-right: 3em;
+  background: transparent url('images/palette.svg') right center no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.tulip-attribute-picker-picker label,
+.tulip-attribute-picker-picker input {
+  display: block;
+  float: left;
+  width: 40%;
+}
+
+.tulip-attribute-picker-picker .tulip-attribute {
+  margin-bottom: .5em;
+}
+
+.tulip-attribute-picker-picker .tulip-attribute-picker-done-container {
+  text-align: right;
+}
+
+
+/**
+ * Override for SMD
+ */
+
+
+/**
+ * Spectrum color picker
+ */
+.tulip-app-container .sp-replacer {
+  border-color: #222222;
+}
+.tulip-app-container .sp-replacer:hover {
+  border-color: #989898;
+}
+body .sp-container {
+  background-color: #F1F1F1;
+  border-color: #989898;
+}
+body .sp-container a,
+body .sp-container a.sp-cancel {
+  color: #4D642D !important;
+}

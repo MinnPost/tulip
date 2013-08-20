@@ -1,0 +1,25 @@
+{
+  "name": "tulip",
+  "version": "0.1.1",
+  "description": "Tulip is a customizable application for creating static or D3 based maps.",
+  "homepage": "https://github.com/MinnPost/tulip",
+  "main": "dist/tulip.js",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.6.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jst": "~0.5.1",
+    "grunt-contrib-connect": "~0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MinnPost/tulip.git"
+  },
+  "author": "Alan Palazzolo",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>    <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>     <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>     <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tulip</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="dist/tulip.libs.css">
+    <link rel="stylesheet" href="dist/tulip.css">
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="tulip-container">
+      <div class="tulip-app"></div>
+    </div>
+
+    <script src="dist/tulip.libs.js"></script>
+    <script src="dist/tulip.js"></script>
+
+    <script>
+      (function() {
+        var thisTulip = new Tulip({
+          el: '.tulip-app'
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1091 @@
+/*! tulip - v0.1.1 - 2013-08-20
+ * https://github.com/MinnPost/tulip
+ * Copyright (c) 2013 Alan Palazzolo; Licensed MIT
+ */
+
+/*! normalize.css v1.1.2 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-size: 100%; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Address `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
+}
+
+/**
+ * Address margins handled incorrectly in IE 6/7.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address font sizes and margins set differently in IE 6/7.
+ * Address font sizes within `section` and `article` in Firefox 4+, Safari 5,
+ * and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+
+h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+
+h5 {
+    font-size: 0.83em;
+    margin: 1.67em 0;
+}
+
+h6 {
+    font-size: 0.67em;
+    margin: 2.33em 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+blockquote {
+    margin: 1em 40px;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ * Known issue: no IE 6/7 normalization.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 6/7/8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Address margins set differently in IE 6/7.
+ */
+
+p,
+pre {
+    margin: 1em 0;
+}
+
+/**
+ * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    _font-family: 'courier new', monospace;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/**
+ * Address CSS quotes not supported in IE 6/7.
+ */
+
+q {
+    quotes: none;
+}
+
+/**
+ * Address `quotes` property not supported in Safari 4.
+ */
+
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+
+/**
+ * Address margins set differently in IE 6/7.
+ */
+
+dl,
+menu,
+ol,
+ul {
+    margin: 1em 0;
+}
+
+dd {
+    margin: 0 0 0 40px;
+}
+
+/**
+ * Address paddings set differently in IE 6/7.
+ */
+
+menu,
+ol,
+ul {
+    padding: 0 0 0 40px;
+}
+
+/**
+ * Correct list images handled incorrectly in IE 7.
+ */
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+
+img {
+    border: 0; /* 1 */
+    -ms-interpolation-mode: bicubic; /* 2 */
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+
+form {
+    margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0;
+    white-space: normal; /* 2 */
+    *margin-left: -7px; /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+    *overflow: visible;  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    *height: 13px; /* 3 */
+    *width: 13px; /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/***
+Spectrum Colorpicker v1.1.1
+https://github.com/bgrins/spectrum
+Author: Brian Grinstead
+License: MIT
+***/
+
+.sp-container {
+    position:absolute;
+    top:0;
+    left:0;
+    display:inline-block;
+    *display: inline;
+    *zoom: 1;
+    z-index: 2147483647;
+    overflow: hidden;
+}
+.sp-container.sp-flat {
+    position: relative;
+}
+
+/* http://ansciath.tumblr.com/post/7347495869/css-aspect-ratio */
+.sp-top {
+  position:relative;
+  width: 100%;
+  display:inline-block;
+}
+.sp-top-inner {
+   position:absolute;
+   top:0;
+   left:0;
+   bottom:0;
+   right:0;
+}
+.sp-color {
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:20%;
+}
+.sp-hue {
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:84%;
+    height: 100%;
+}
+.sp-fill {
+    padding-top: 80%;
+}
+.sp-sat, .sp-val {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.sp-alpha-enabled .sp-top
+{
+    margin-bottom: 18px;
+}
+.sp-alpha-enabled .sp-alpha
+{
+    display: block;
+}
+
+.sp-alpha-handle
+{
+    position:absolute;
+    top:-4px;
+    bottom: -4px;
+    width: 6px;
+    left: 50%;
+    cursor: pointer;
+    border: 1px solid black;
+    background: white;
+    opacity: .8;
+}
+
+.sp-alpha
+{
+    display: none;
+    position: absolute;
+    bottom: -14px;
+    right: 0;
+    left: 0;
+    height: 8px;
+}
+.sp-alpha-inner{
+    border: solid 1px #333;
+}
+
+/* Don't allow text selection */
+.sp-container, .sp-replacer, .sp-preview, .sp-dragger, .sp-slider, .sp-alpha, .sp-alpha-handle, .sp-container.sp-dragging .sp-input, .sp-container button  {
+    -webkit-user-select:none;
+    -moz-user-select: -moz-none;
+    -o-user-select:none;
+    user-select: none;
+}
+
+.sp-container.sp-input-disabled .sp-input-container {
+    display: none;
+}
+.sp-container.sp-buttons-disabled .sp-button-container {
+    display: none;
+}
+.sp-palette-only .sp-picker-container {
+    display: none;
+}
+.sp-palette-disabled .sp-palette-container {
+    display: none;
+}
+
+.sp-initial-disabled .sp-initial {
+    display: none;
+}
+
+
+/* Gradients for hue, saturation and value instead of images.  Not pretty... but it works */
+.sp-sat {
+    background-image: -webkit-gradient(linear,  0 0, 100% 0, from(#FFF), to(rgba(204, 154, 129, 0)));
+    background-image: -webkit-linear-gradient(left, #FFF, rgba(204, 154, 129, 0));
+    background-image: -moz-linear-gradient(left, #fff, rgba(204, 154, 129, 0));
+    background-image: -o-linear-gradient(left, #fff, rgba(204, 154, 129, 0));
+    background-image: -ms-linear-gradient(left, #fff, rgba(204, 154, 129, 0));
+    background-image: linear-gradient(to right, #fff, rgba(204, 154, 129, 0));
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr=#FFFFFFFF, endColorstr=#00CC9A81)";
+    filter : progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr='#FFFFFFFF', endColorstr='#00CC9A81');
+}
+.sp-val {
+    background-image: -webkit-gradient(linear, 0 100%, 0 0, from(#000000), to(rgba(204, 154, 129, 0)));
+    background-image: -webkit-linear-gradient(bottom, #000000, rgba(204, 154, 129, 0));
+    background-image: -moz-linear-gradient(bottom, #000, rgba(204, 154, 129, 0));
+    background-image: -o-linear-gradient(bottom, #000, rgba(204, 154, 129, 0));
+    background-image: -ms-linear-gradient(bottom, #000, rgba(204, 154, 129, 0));
+    background-image: linear-gradient(to top, #000, rgba(204, 154, 129, 0));
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00CC9A81, endColorstr=#FF000000)";
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr='#00CC9A81', endColorstr='#FF000000');
+}
+
+.sp-hue {
+    background: -moz-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+    background: -ms-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+    background: -o-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), color-stop(0.17, #ffff00), color-stop(0.33, #00ff00), color-stop(0.5, #00ffff), color-stop(0.67, #0000ff), color-stop(0.83, #ff00ff), to(#ff0000));
+    background: -webkit-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+}
+
+/* IE filters do not support multiple color stops.
+   Generate 6 divs, line them up, and do two color gradients for each.
+   Yes, really.
+ */
+
+.sp-1 {
+    height:17%;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0000', endColorstr='#ffff00');
+}
+.sp-2 {
+    height:16%;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff00', endColorstr='#00ff00');
+}
+.sp-3 {
+    height:17%;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ff00', endColorstr='#00ffff');
+}
+.sp-4 {
+    height:17%;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffff', endColorstr='#0000ff');
+}
+.sp-5 {
+    height:16%;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0000ff', endColorstr='#ff00ff');
+}
+.sp-6 {
+    height:17%;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00ff', endColorstr='#ff0000');
+}
+
+.sp-hidden {
+    display: none !important;
+}
+
+/* Clearfix hack */
+.sp-cf:before, .sp-cf:after { content: ""; display: table; }
+.sp-cf:after { clear: both; }
+.sp-cf { *zoom: 1; }
+
+/* Mobile devices, make hue slider bigger so it is easier to slide */
+@media (max-device-width: 480px) {
+    .sp-color { right: 40%; }
+    .sp-hue { left: 63%; }
+    .sp-fill { padding-top: 60%; }
+}
+
+.sp-dragger {
+   border-radius: 5px;
+   height: 5px;
+   width: 5px;
+   border: 1px solid #fff;
+   background: #000;
+   cursor: pointer;
+   position:absolute;
+   top:0;
+   left: 0;
+}
+.sp-slider {
+    position: absolute;
+    top:0;
+    cursor:pointer;
+    height: 3px;
+    left: -1px;
+    right: -1px;
+    border: 1px solid #000;
+    background: white;
+    opacity: .8;
+}
+
+/* Basic display options (colors, fonts, global widths) */
+.sp-container {
+    border-radius: 0;
+    background-color: #ECECEC;
+    border: solid 1px #f0c49B;
+    padding: 0;
+}
+.sp-container, .sp-container button, .sp-container input, .sp-color, .sp-hue
+{
+    font: normal 12px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.sp-top
+{
+    margin-bottom: 3px;
+}
+.sp-color, .sp-hue
+{
+    border: solid 1px #666;
+}
+
+/* Input */
+.sp-input-container {
+    float:right;
+    width: 100px;
+    margin-bottom: 4px;
+}
+.sp-initial-disabled  .sp-input-container {
+    width: 100%;
+}
+.sp-input {
+   font-size: 12px !important;
+   border: 1px inset;
+   padding: 4px 5px;
+   margin: 0;
+   width: 100%;
+   background:transparent;
+   border-radius: 3px;
+   color: #222;
+}
+.sp-input:focus  {
+    border: 1px solid orange;
+}
+.sp-input.sp-validation-error
+{
+    border: 1px solid red;
+    background: #fdd;
+}
+.sp-picker-container , .sp-palette-container
+{
+    float:left;
+    position: relative;
+    padding: 10px;
+    padding-bottom: 300px;
+    margin-bottom: -290px;
+}
+.sp-picker-container
+{
+    width: 172px;
+    border-left: solid 1px #fff;
+}
+
+/* Palettes */
+.sp-palette-container
+{
+    border-right: solid 1px #ccc;
+}
+
+.sp-palette .sp-thumb-el {
+    display: block;
+    position:relative;
+    float:left;
+    width: 24px;
+    height: 15px;
+    margin: 3px;
+    cursor: pointer;
+    border:solid 2px transparent;
+}
+.sp-palette .sp-thumb-el:hover, .sp-palette .sp-thumb-el.sp-thumb-active {
+    border-color: orange;
+}
+.sp-thumb-el
+{
+    position:relative;
+}
+
+/* Initial */
+.sp-initial
+{
+    float: left;
+    border: solid 1px #333;
+}
+.sp-initial span {
+    width: 30px;
+    height: 25px;
+    border:none;
+    display:block;
+    float:left;
+    margin:0;
+}
+
+/* Buttons */
+.sp-button-container {
+    float: right;
+}
+
+/* Replacer (the little preview div that shows up instead of the <input>) */
+.sp-replacer {
+    margin:0;
+    overflow:hidden;
+    cursor:pointer;
+    padding: 4px;
+    display:inline-block;
+    *zoom: 1;
+    *display: inline;
+    border: solid 1px #91765d;
+    background: #eee;
+    color: #333;
+    vertical-align: middle;
+}
+.sp-replacer:hover, .sp-replacer.sp-active {
+    border-color: #F0C49B;
+    color: #111;
+}
+.sp-replacer.sp-disabled {
+    cursor:default;
+    border-color: silver;
+    color: silver;
+}
+.sp-dd {
+    padding: 2px 0;
+    height: 16px;
+    line-height: 16px;
+    float:left;
+    font-size:10px;
+}
+.sp-preview
+{
+    position:relative;
+    width:25px;
+    height: 20px;
+    border: solid 1px #222;
+    margin-right: 5px;
+    float:left;
+    z-index: 0;
+}
+
+.sp-palette
+{
+    *width: 220px;
+    max-width: 220px;
+}
+.sp-palette .sp-thumb-el
+{
+    width:16px;
+    height: 16px;
+    margin:2px 1px;
+    border: solid 1px #d0d0d0;
+}
+
+.sp-container
+{
+    padding-bottom:0;
+}
+
+
+/* Buttons: http://hellohappy.org/css3-buttons/ */
+.sp-container button {
+  background-color: #eeeeee;
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: linear-gradient(to bottom, #eeeeee, #cccccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 3px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1;
+  padding: 5px 4px;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  vertical-align: middle;
+}
+.sp-container button:hover {
+    background-color: #dddddd;
+    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: linear-gradient(to bottom, #dddddd, #bbbbbb);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #ddd;
+}
+.sp-container button:active {
+    border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+    -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    -ms-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    -o-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+}
+.sp-cancel
+{
+    font-size: 11px;
+    color: #d93f3f !important;
+    margin:0;
+    padding:2px;
+    margin-right: 5px;
+    vertical-align: middle;
+    text-decoration:none;
+
+}
+.sp-cancel:hover
+{
+    color: #d93f3f !important;
+    text-decoration: underline;
+}
+
+
+.sp-palette span:hover, .sp-palette span.sp-thumb-active
+{
+    border-color: #000;
+}
+
+.sp-preview, .sp-alpha, .sp-thumb-el
+{
+    position:relative;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);
+}
+.sp-preview-inner, .sp-alpha-inner, .sp-thumb-inner
+{
+    display:block;
+    position:absolute;
+    top:0;left:0;bottom:0;right:0;
+}
+
+.sp-palette .sp-thumb-inner
+{
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.sp-palette .sp-thumb-light.sp-thumb-active .sp-thumb-inner
+{
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIVJREFUeNpiYBhsgJFMffxAXABlN5JruT4Q3wfi/0DsT64h8UD8HmpIPCWG/KemIfOJCUB+Aoacx6EGBZyHBqI+WsDCwuQ9mhxeg2A210Ntfo8klk9sOMijaURm7yc1UP2RNCMbKE9ODK1HM6iegYLkfx8pligC9lCD7KmRof0ZhjQACDAAceovrtpVBRkAAAAASUVORK5CYII=);
+}
+
+.sp-palette .sp-thumb-dark.sp-thumb-active .sp-thumb-inner
+{
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAMdJREFUOE+tkgsNwzAMRMugEAahEAahEAZhEAqlEAZhEAohEAYh81X2dIm8fKpEspLGvudPOsUYpxE2BIJCroJmEW9qJ+MKaBFhEMNabSy9oIcIPwrB+afvAUFoK4H0tMaQ3XtlrggDhOVVMuT4E5MMG0FBbCEYzjYT7OxLEvIHQLY2zWwQ3D+9luyOQTfKDiFD3iUIfPk8VqrKjgAiSfGFPecrg6HN6m/iBcwiDAo7WiBeawa+Kwh7tZoSCGLMqwlSAzVDhoK+6vH4G0P5wdkAAAAASUVORK5CYII=);
+}
+
+/**
+ * Main CSS for Simple Map D3.
+ */
+.simple-map-d3-tooltip-container {
+  position: relative;
+}
+
+.simple-map-d3-tooltip {
+  position: absolute;
+  display: none;
+  top: 5px;
+  right: 5px;
+  border: 1px solid #898989;
+  padding: .5em;
+  font-size: .75em;
+  background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.smd-canvas.smd-draggable,
+.smd-draggable { 
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.smd-canvas.smd-draggable.dragging,
+.smd-draggable.dragging {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.smd-background {
+  fill: transparent;
+  stroke: 0;
+}
+
+.smd-path {
+  stroke: #898989;
+  stroke-width: .4px;
+  stroke-opacity: .85;
+}
+
+.smd-path:hover {
+  stroke-opacity: 1;
+  stroke-width: .5px;
+}
+
+.smd-canvas.smd-tooltipped .smd-path:hover {
+  cursor: pointer;
+}
+
+.smd-legend-container {
+  stroke-width: .5px;
+  fill: #FFFFFF;
+  fill-opacity: 0.9;
+  stroke: #898989;
+}
+
+.smd-legend-label {
+  font-weight: bold;
+}
+
+.smd-graticule {
+  fill: none;
+  stroke: #222222;
+  stroke-width: .5px;
+  stroke-opacity: .75;
+}
+
+.smd-globe {
+  fill: none;
+  stroke: #222222;
+  stroke-width: 3px;
+}
