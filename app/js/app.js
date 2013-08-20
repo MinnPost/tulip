@@ -2,6 +2,9 @@
  * Main application file
  */
 (function($, undefined) {
+  // TODO: handle compiled templates
+  //var compiledTemplates = _.clone(Tulip.templates);
+
   var Tulip = window.Tulip = (function() {
     // Constructor
     function tulip(options) {

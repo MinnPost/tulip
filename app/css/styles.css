@@ -16,7 +16,7 @@
 
 .tulip-app-container .tulip-u {
   color: transparent;
-  background: transparent url('../images/tulip-top.svg') center .35em no-repeat;
+  background: transparent url('images/tulip-top.svg') center .35em no-repeat;
   background-size: contain;
   width: 1em;
   height: 1em;
@@ -144,7 +144,7 @@
 
 .tulip-attribute-picker-label {
   padding-right: 3em;
-  background: transparent url('../images/palette.svg') right center no-repeat;
+  background: transparent url('images/palette.svg') right center no-repeat;
   background-size: contain;
   cursor: pointer;
 }
