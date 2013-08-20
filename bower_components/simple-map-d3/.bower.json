@@ -18,11 +18,11 @@
     "jquery": "~2.0.3"
   },
   "homepage": "https://github.com/MinnPost/simple-map-d3",
-  "_release": "eed45eea88",
+  "_release": "18dca7cfe2",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "eed45eea88c2dca57f476a92bd4d894fb33d4009"
+    "commit": "18dca7cfe23906ba06c651d37c44dfb3b746a905"
   },
   "_source": "git://github.com/MinnPost/simple-map-d3.git",
   "_target": "master"

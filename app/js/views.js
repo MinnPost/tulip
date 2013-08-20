@@ -465,8 +465,6 @@
         
         // Set color property.  Just use the first one
         thisView.model.set('colorProperty', _.keys(thisView.options.map.smd.data.features[0].properties)[0]);
-        
-        thisView.stickit();
       };
       
       reader.readAsText(file);
@@ -588,6 +586,7 @@
       // Make config
       config = _.extend(this.model.toJSON(), config);
       config.container = this.mapEl;
+      config.startManually = true;
       
       // Make width height
       this.$mapEl.css('width', config.width);
@@ -600,7 +599,7 @@
       
       // Make map
       this.$mapEl.html('');
-      this.smd = new SimpleMapD3(config);
+      this.smd = SimpleMapD3(config);
       
       // Trigger when data is loaded
       this.smd.events.on('dataLoaded', function(smd) {
@@ -611,6 +610,8 @@
       this.smd.events.on('rendered', function(smd) {
         thisView.trigger('mapRendered');
       });
+      
+      this.smd.start();
       
       return this;
     }
