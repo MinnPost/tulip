@@ -142,6 +142,7 @@
       exampleConfig.fileType = 'geojson';
       exampleConfig.projection = 'eckert4';
       exampleConfig.colorProperty = 'POP2005';
+      exampleConfig.mapOffset = [12, 0];
       exampleConfig.graticuleOn = true;
       exampleConfig.globeOn = true;
       exampleConfig.colorOn = true;
