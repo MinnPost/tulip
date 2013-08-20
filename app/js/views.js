@@ -443,7 +443,7 @@
               type = 'geojson';
             }
             else if (data.type === 'Topology') {
-              type = 'topology'
+              type = 'topology';
             }
             else {
               return false;

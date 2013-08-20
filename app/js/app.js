@@ -155,7 +155,7 @@
       };
       
       return exampleConfig;
-    },
+    };
     
     // Render parts
     tulip.prototype.render = function() {
