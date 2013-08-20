@@ -417,7 +417,9 @@
         'stroke-width': 'measurement',
         'stroke-opacity': 'percent',
         fill: 'color',
-        'fill-opacity': 'percent'
+        'fill-opacity': 'percent',
+        'font-family': 'font-family',
+        'font-size': 'measurement'
       };
       
       this.$el.find('.tulip-attribute-picker').each(function() {
