@@ -425,6 +425,7 @@
       this.$el.find('.tulip-attribute-picker').each(function() {
         var $this = $(this);
         var $picker;
+        var $label = $this.parent().find('label[for=' + $this.attr('id') + ']');
         
         // Make output
         $this.wrap('<div class="tulip-attribute-picker-container"></div>');
@@ -433,6 +434,10 @@
           values: JSON.parse($this.val())
         }));
         $picker = $this.parent().find('.tulip-attribute-picker-picker');
+        
+        // Mark label and hide
+        $label.addClass('tulip-attribute-picker-label');
+        $this.addClass('tulip-invisible');
         
         // Color picker
         $picker.find('input[data-type=color]').spectrum({
@@ -445,9 +450,11 @@
           preferredFormat: 'hex'
         });
         
-        // Handle click
+        // Handle clicka
         $this.on('click focus', function(e) {
-          $this.attr('disabled', 'true');
+          $picker.slideDown();
+        });
+        $label.on('click focus', function(e) {
           $picker.slideDown();
         });
         
@@ -467,8 +474,9 @@
           });
           $this.val(JSON.stringify(values));
         
-          $picker.slideUp();
-          $this.trigger('change').removeAttr('disabled');
+          $picker.slideUp(function() {
+            $this.trigger('change');
+          });
         });
       });
       

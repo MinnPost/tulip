@@ -10,6 +10,10 @@
   color: #4D642D;
 }
 
+.tulip-app-container .tulip-invisible {
+  display: none;
+}
+
 .tulip-app-container .tulip-u {
   color: transparent;
   background: transparent url('../images/tulip-top.svg') center .35em no-repeat;
@@ -136,6 +140,13 @@
   border: 1px solid #989898;
   margin: .5em 0 1em 0;
   padding: 1em;
+}
+
+.tulip-attribute-picker-label {
+  padding-right: 3em;
+  background: transparent url('../images/palette.svg') right center no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
 
 .tulip-attribute-picker-picker label,
