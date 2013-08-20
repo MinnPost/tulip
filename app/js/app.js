@@ -126,6 +126,10 @@
       // Legend
       config.legendScale = 1;
       
+      // Dragging enabled for export
+      config.legendDragOn = true;
+      config.mapDragOn = true;
+      
       return config;
     };
     

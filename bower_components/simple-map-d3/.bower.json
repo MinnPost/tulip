@@ -12,12 +12,17 @@
   "dependencies": {
     "d3": "git://github.com/mbostock/d3.git#~3.2.8"
   },
+  "devDependencies": {
+    "simple": "https://github.com/michaelparenteau/simple.git",
+    "topojson": "~1.2.3",
+    "jquery": "~2.0.3"
+  },
   "homepage": "https://github.com/MinnPost/simple-map-d3",
-  "_release": "d9125089b4",
+  "_release": "34ba8012f1",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d9125089b41d46358545532a9bcc90acd5e06bdf"
+    "commit": "34ba8012f1ad53b608daa904c2c27f60de801402"
   },
   "_source": "git://github.com/MinnPost/simple-map-d3.git",
   "_target": "master"

@@ -279,8 +279,14 @@
           return JSON.parse(value);
         }
       },
-      '#tulip-configuration-dragOn': {
-        observe: 'dragOn'
+      '#tulip-configuration-legendDragOn': {
+        observe: 'legendDragOn'
+      },
+      '#tulip-configuration-mapDragOn': {
+        observe: 'mapDragOn'
+      },
+      '#tulip-configuration-canvasDragOn': {
+        observe: 'canvasDragOn'
       },
       '#tulip-configuration-graticuleOn': {
         observe: 'graticuleOn'

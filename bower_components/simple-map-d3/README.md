@@ -19,8 +19,12 @@ See [code.minnpost.com/simple-map-d3](http://code.minnpost.com/simple-map-d3/) f
 
 1. Run: `grunt`
 
-## Example
+### Testing
 
-The example page is built with some other libraries.
+There are some very basic tests in the `tests/` folder.  Run them like so: `node tests/core.js`
 
-    bower install https://github.com/michaelparenteau/simple.git topojson#~1.2.3 jquery#~2.0.3
+### Browser support
+
+As this library depends heavily on D3 and SVG, Simple Map will only work in "modern" browsers.  The following is some basic tests run on Tesling.
+
+[![browser support](https://ci.testling.com/minnpost/simple-map-d3.png)](https://ci.testling.com/minnpost/simple-map-d3)
