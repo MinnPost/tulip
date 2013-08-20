@@ -314,7 +314,7 @@
     render: function() {
       this.$el.html(_.template(this.templates['configuration.html'])({ }));
       this.stickit();
-      this.handleUpload();
+      this.handleUpload().makeAttributePicker();
       return this;
     },
     
@@ -343,6 +343,8 @@
           thisView.readFile(files[0]);
         }
       });
+      
+      return this;
     },
     
     // Read uploaded file
@@ -404,6 +406,60 @@
       map.$mapEl.find('svg').attr('id', id);
       image = Pancake(id);
       image.download('map.png');
+    },
+    
+    // Make attribute picker
+    makeAttributePicker: function() {
+      var thisView = this;
+      var template = _.template(this.templates['attribute-picker.html']);
+      var attributes = {
+        stroke: 'color',
+        'stroke-width': 'measurement',
+        'stroke-opacity': 'percent',
+        fill: 'color',
+        'fill-opacity': 'percent'
+      };
+      
+      this.$el.find('.tulip-attribute-picker').each(function() {
+        var $this = $(this);
+        var $picker;
+        
+        // Make output
+        $this.wrap('<div class="tulip-attribute-picker-container"></div>');
+        $this.parent().append(template({
+          attributes: attributes,
+          values: JSON.parse($this.val())
+        }));
+        $picker = $this.parent().find('.tulip-attribute-picker-picker');
+        
+        // Handle click
+        $this.on('click focus', function(e) {
+          $this.attr('disabled', 'true');
+          $picker.slideDown();
+        });
+        
+        // When all done
+        $picker.find('.tulip-attribute-picker-done').on('click', function(e) {
+          e.preventDefault();
+          var values = {};
+          
+          $picker.find('.tulip-attribute').each(function() {
+            var $attr = $(this);
+            var $input = $(this).find('input');
+            var $label = $(this).find('label');
+            
+            if ($input.val() !== '') {
+              values[$label.data('attribute')] = $input.val();
+            }
+          });
+          $this.val(JSON.stringify(values));
+        
+          $picker.slideUp();
+          $this.trigger('change').removeAttr('disabled');
+        });
+      });
+      
+      return this;
     }
   });
 

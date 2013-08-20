@@ -1,0 +1,11 @@
+<div class="tulip-attribute-picker-picker">
+  <% _.each(attributes, function(type, a) { %>
+    <div class="tulip-attribute">
+      <label data-attribute="<%= a %>"><%= a %></label>
+      
+      <input type="text" data-type="<%= type %>" value="<%= (values[a]) ? values[a] : '' %>" />
+    </div>
+  <% }) %>
+  
+  <a href="#" class="tulip-attribute-picker-done">Done</a>
+</div>

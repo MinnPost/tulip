@@ -31,7 +31,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 66.66%;
+  width: 66%;
   min-height: 10em;
   z-index: -5;
 }
@@ -125,6 +125,17 @@
   border-top: 1px solid #BDBDBD;
   color: #989898;
   margin-bottom: 2em;
+}
+
+.tulip-attribute-picker-picker {
+  display: none;
+  border: 1px solid #989898;
+  margin: .5em 0 1em 0;
+  padding: 1em;
+}
+
+.tulip-attribute-picker-picker .tulip-attribute {
+  margin-bottom: .5em;
 }
 
 
