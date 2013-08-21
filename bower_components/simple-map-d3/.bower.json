@@ -4,10 +4,9 @@
   "ignore": [
     "node_modules",
     "bower_components",
-    "test",
-    "css",
-    "js",
-    "tests"
+    "example-data",
+    "tests",
+    "index.html"
   ],
   "dependencies": {
     "d3": "git://github.com/mbostock/d3.git#~3.2.8"
@@ -18,11 +17,11 @@
     "jquery": "~2.0.3"
   },
   "homepage": "https://github.com/MinnPost/simple-map-d3",
-  "_release": "18dca7cfe2",
+  "_release": "b1cdd1d3c8",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "18dca7cfe23906ba06c651d37c44dfb3b746a905"
+    "commit": "b1cdd1d3c868828e4b7d67d08a8cc6c371870944"
   },
   "_source": "git://github.com/MinnPost/simple-map-d3.git",
   "_target": "master"

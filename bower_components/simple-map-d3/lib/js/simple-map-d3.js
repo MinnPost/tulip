@@ -349,10 +349,13 @@ function SimpleMapD3(o) {
       .on('drag', function(d,i) {
         d.x += d3.event.dx;
         d.y += d3.event.dy;
+        
         d3.select(this)
           .classed('dragging', true)
           .attr('transform', function(d, i) {
-            return 'translate(' + [ d.x, d.y ] + ')';
+            var transform = 'translate(' + [ d.x, d.y ] + ')';
+            transform += (d.scale) ? ' scale(' + d.scale + ')' : '';
+            return transform;
           });
       })
       .on('dragend', function(d) {
@@ -373,7 +376,7 @@ function SimpleMapD3(o) {
 
     // Legend drag
     if (smd.options.legendDragOn === true && smd.legendGroup) {
-      smd.legendGroup
+      smd.draggableLegendGroup
         .classed('smd-draggable', true)
         .call(smd.dragSimple);
     }
@@ -450,8 +453,13 @@ function SimpleMapD3(o) {
     
     // Specific to scale type, unfortunately
     if (legendSwatches && legendSwatches.length > 0) {
+      // Make a wrapper for dragging
+      smd.draggableLegendGroup = smd.canvas.append('g')
+        .attr('class', 'smd-draggable-legend');
+    
       // Make group for legend objects
-      smd.legendGroup = smd.canvas.append('g');
+      smd.legendGroup = smd.draggableLegendGroup.append('g')
+        .attr('class', 'smd-legend-group');
       
       // Make container and label for legend
       smd.legendGroup.append('rect')
@@ -494,11 +502,14 @@ function SimpleMapD3(o) {
           .text(function(d, i) { return '>= ' + formatter(d); })
           .style(smd.options.stylesLegendText);
       
-      // Scale and translate from offset
+      // Scale legend
       smd.legendGroup
-        .attr('transform', 'scale(' + scale + ')')
-        .data([{ x: offset[0] - 1, y: offset[1] - 1 }])
-        .attr('transform', 'translate(' + offset + ')');
+        .attr('transform', 'scale(' + scale + ')');
+        
+      // Offset group for dragging
+      smd.draggableLegendGroup
+        .attr('transform', 'translate(' + offset + ')')
+        .data([{ x: offset[0] - 1, y: offset[1] - 1 }]);
     }
   
     return smd;
