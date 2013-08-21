@@ -10,11 +10,17 @@ Tulip is a web interface built on top of [Simple Map D3](http://code.minnpost.co
 
 (coming soon)  Tulip is fully customizable so that it can be deployed for an organization or individual with specific configuration options already set or removed so that the design of maps can be controlled.
 
-Inspiration take from [ChartBuilder](https://github.com/Quartz/Chartbuilder).
+Inspiration from [ChartBuilder](https://github.com/Quartz/Chartbuilder).
 
 ## Examples
 
-(coming soon)
+![European Population Density on Mollewide projection](https://raw.github.com/MinnPost/tulip/master/examples/tulip-european-population-density-mollewide.png)
+
+![World Population, South-Oreiented on Robinson projection](https://raw.github.com/MinnPost/tulip/master/examples/tulip-world-population-robinson-south-oriented.png)
+
+![2010 Median Age by State on Albers USA projection](https://raw.github.com/MinnPost/tulip/master/examples/tulip-2010-us-median-age-albersUSA.png)
+
+![World Population on Gall Peters projection](https://raw.github.com/MinnPost/tulip/master/examples/tulip-world-population-2005-gall-peters-blue.png)
 
 ## Deployment
 
