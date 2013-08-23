@@ -478,10 +478,25 @@
       var map = this.options.map;
       var title = this.options.map.model.get('fileName') || 'tulip-map';
       var imageFormat = this.$el.find('#tulip-export-format').val() || 'png';
-      var image, title;
+      var scale = parseFloat(this.$el.find('#tulip-export-scale').val()) || 1;
+      var image, title, $temp;
+      
+      // For scaling, we create a temporary scg element.  This
+      // is pretty hacky
+      if (!_.isNaN(scale) && scale > 0 && scale !== 1) {
+        $temp = $('.tulip-temp-container')
+        $temp.html('').append(map.$mapEl.clone());
+        $temp.find('svg')
+          .attr('transform', 'scale(' + scale + ')')
+          .width(map.$mapEl.width() * scale)
+          .height(map.$mapEl.height() * scale)
+          .attr('id', id);
+      }
+      else {
+        map.$mapEl.find('svg').attr('id', id);
+      }
       
       title = title.split('.')[0];
-      map.$mapEl.find('svg').attr('id', id);
       image = Pancake(id, imageFormat);
       image.download(title + '.' + imageFormat);
     },
@@ -586,23 +601,8 @@
     render: function(config) {
       var thisView = this;
       
-      // Make config
-      config = _.extend(this.model.toJSON(), config);
-      config.container = this.mapEl;
-      config.startManually = true;
-      
-      // Make width height
-      this.$mapEl.css('width', config.width);
-      if (['100%', 'auto'].indexOf(config.height) >= 0) {
-        this.$mapEl.css('height', ($(window).height() - 5) + 'px');
-      }
-      else {
-        this.$mapEl.css('height', config.height);
-      }
-      
       // Make map
-      this.$mapEl.html('');
-      this.smd = SimpleMapD3(config);
+      this.smd = this.renderMap(config, this.mapEl);
       
       // Trigger when data is loaded
       this.smd.events.on('dataLoaded', function(smd) {
@@ -617,6 +617,31 @@
       this.smd.start();
       
       return this;
+    },
+    
+    // Abstracted map making function
+    renderMap: function(config, el) {
+      config = config || {};
+      el = el || this.mapEl;
+      var $el = $(el);
+      
+      // Make config
+      config = _.extend(this.model.toJSON(), config);
+      config.container = el;
+      config.startManually = true;
+      
+      // Set width and height on original container
+      $el.css('width', config.width);
+      if (['100%', 'auto'].indexOf(config.height) >= 0) {
+        $el.css('height', ($(window).height() - 5) + 'px');
+      }
+      else {
+        $el.css('height', config.height);
+      }
+      
+      // Make map
+      $el.html('');
+      return SimpleMapD3(config);
     }
   });
 })(Tulip, jQuery, undefined);

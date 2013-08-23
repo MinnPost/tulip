@@ -10,7 +10,8 @@
   color: #4D642D;
 }
 
-.tulip-app-container .tulip-invisible {
+.tulip-app-container .tulip-invisible,
+.tulip-temp-container {
   display: none;
 }
 
