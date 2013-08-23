@@ -31,10 +31,18 @@
     
     // Default options
     tulip.prototype.defaultOptions = {
+      // Whether to start manually or not.  The default is to start automatically
       startManually: false,
+      // Location of tempaltes
       templatePrefix: 'app/templates/',
+      // title used in the right-hand bar
       title: 'T<span class="tulip-u">u</span>lip <span class="tulip-beta">beta</span>',
-      description: 'Tulip is an application to make building choropleth styled maps easy.'
+      // Description used in the right-hand bar
+      description: 'Tulip is an application to make building choropleth styled maps easy.',
+      // The configuration options that should be hidden and not available to the user
+      hideConfig: []
+      // The default map configuration.  The default is handled in other places
+      // mapConfig
     };
     
     // Start function

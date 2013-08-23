@@ -384,7 +384,29 @@
         app: this.options.app.options
       }));
       this.stickit();
-      this.handleUpload().makeAttributePicker();
+      this.handleUpload()
+        .makeAttributePicker()
+        .hideConfigComponents();
+      return this;
+    },
+    
+    // Hide config items
+    hideConfigComponents: function() {
+      var thisView = this;
+      var conf = this.options.app.options.hideConfig;
+      
+      if (!_.isUndefined(conf) && _.isArray(conf) && _.size(conf) > 0) {
+        _.each(conf, function(c) {
+          var $container = thisView.$el.find('#tulip-configuration-' + c).parent();
+          if ($container.hasClass('tulip-attribute-picker-container')) {
+            $container.parent().hide();
+          }
+          else {
+            $container.hide();
+          }
+        });
+      }
+      
       return this;
     },
     

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tulip</title>
+    <title>Dhalia</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -41,7 +41,84 @@
     <script>
       (function() {
         var thisTulip = new Tulip({
-          el: '.tulip-app'
+          el: '.tulip-app',
+          title: 'Dhalia',
+          description: 'Colorful, hard-edged maps.',
+          hideConfig: [
+            'aspectRatio',
+            'width',
+            'mapOffset',
+            'rotation0',
+            'rotation1',
+            'colorScale',
+            'tooltipOn',
+            'tooltipContent',
+            'lengendOn',
+            'stylesLegendContainer',
+            'stylesLegendTitleText',
+            'stylesLegendText',
+            'stylesLegendSwatch',
+            'stylesBackground',
+            'legendScale',
+            'canvasDragOn',
+            'mapDragOn',
+            'legendDragOn',
+            'globeOn',
+            'stylesGlobe',
+            'stylesGraticule'
+          ],
+          mapConfig: {
+            datasource: 'data/europe-population-density-geocommons.geo.json',
+            fileName: 'europe-population-density-geocommons.geo.json',
+            fileSize: '988765',
+            fileType: 'geojson',
+            aspectRatio: '16:10',
+            projection: 'mollweide',
+            colorProperty: 'population',
+            styles: {
+              stroke: '#121212',
+              'stroke-opacity': 0.9,
+              'stroke-width': 4
+            },
+            stylesHover: {
+              stroke: '#262626',
+              'stroke-opacity': 1,
+              'stroke-width': 8
+            },
+            mapOffset: [0, 0],
+            graticuleOn: true,
+            globeOn: true,
+            colorOn: true,
+            colorSet: 'Accent',
+            colorReverse: true,
+            legendTitle: 'European Population Density',
+            legendFormatterString: ',f2',
+            legendFormatter: d3.format(',f2'),
+            legendScale: 1.25,
+            legendOffset: [24, 135],
+            stylesLegendContainer: {
+              fill: '#EAEAEA',
+              'stroke-width': 0
+            },
+            stylesLegendTitleText: {
+              'font-family': 'comic-sans',
+              'font-size': '12'
+            },
+            stylesLegendText: {
+              'font-family': 'comic-sans',
+              'font-size': '12'
+            },
+            tooltipOn: false,
+            tooltipContentTemplate: '<strong><%= p.population %></strong> <br> <%= d3.format(",f2")(p.population) %> per sq km',
+            tooltipContent: function(d) {
+              return _.template('<strong><%= p.population %></strong> <br> <%= d3.format(",f2")(p.population) %> per sq km')({ p: d.properties });
+            },
+            stylesGraticule: {
+              stroke: '#565656',
+              'stroke-opacity': 0.8,
+              'stroke-width': 4
+            }
+          }
         });
       })();
     </script>
