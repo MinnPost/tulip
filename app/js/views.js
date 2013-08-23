@@ -80,6 +80,14 @@
       '.tulip-configuration-fileType': {
         observe: 'fileType'
       },
+      '#tulip-configuration-aspectRatio': {
+        observe: 'aspectRatio',
+        selectOptions: {
+          collection: function() {
+            return this.model.aspectRatioOptions;
+          }
+        }
+      },
       '#tulip-configuration-width': {
         observe: 'width',
         events: ['blur', 'change', 'cut', 'paste']
@@ -624,6 +632,7 @@
       config = config || {};
       el = el || this.mapEl;
       var $el = $(el);
+      var r, w, h;
       
       // Make config
       config = _.extend(this.model.toJSON(), config);
@@ -637,6 +646,12 @@
       }
       else {
         $el.css('height', config.height);
+      }
+      
+      // Handle aspect ratio
+      if (config.aspectRatio) {
+        r = parseFloat(config.aspectRatio.split(':')[0]) / parseFloat(config.aspectRatio.split(':')[1]);
+        $el.height($el.width() / r);
       }
       
       // Make map

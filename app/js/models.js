@@ -37,6 +37,15 @@
       this.projectionOptions = projectionOptions;
     },
     
+    // Aspect ratio options
+    aspectRatioOptions: [
+      { value: '', label: 'None' },
+      { value: '5:4', label: '5:4' },
+      { value: '4:3', label: '4:3' },
+      { value: '16:10', label: '16:10' },
+      { value: '16:9', label: '16:9' }
+    ],
+    
     // Cole scarel options
     colorScaleOptions: [
       { value: 'quantile', label: 'Quantiles' },
