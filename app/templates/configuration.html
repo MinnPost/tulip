@@ -1,5 +1,9 @@
 <section class="tulip-configuration">
-  <h1>T<span class="tulip-u">u</span>lip <span class="tulip-beta">beta</span></h1>
+  <h1><%= app.title %></h1>
+  
+  <% if (app.description) { %>
+    <p class="tulip-description"><%= app.description %></p>
+  <% } %>
   
   <form class="tulip-configuration-form">
     <h2>Data</h2>

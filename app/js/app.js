@@ -13,6 +13,16 @@
       this.el = this.options.el;
       this.$el = $(this.options.el);
       
+      // Since map options are bit complex, we maintain the default
+      // example here.
+      if (!_.isObject(this.options.mapConfig)) {
+        this.options.mapConfig = _.extend(this.defaultMapConfig(), this.exampleMapConfig());
+      }
+      else {
+        this.options.mapConfig = _.extend(this.defaultMapConfig(), this.options.mapConfig);
+      }
+      
+      // Start manually
       if (this.options.startManually === false) {
         this.start();
       }
@@ -22,7 +32,9 @@
     // Default options
     tulip.prototype.defaultOptions = {
       startManually: false,
-      templatePrefix: 'app/templates/'
+      templatePrefix: 'app/templates/',
+      title: 'T<span class="tulip-u">u</span>lip <span class="tulip-beta">beta</span>',
+      description: 'Tulip is an application to make building choropleth styled maps easy.'
     };
     
     // Start function
@@ -136,7 +148,7 @@
       return config;
     };
     
-    // Example config
+    // Example config.  Used if no other mapConfig values are found
     tulip.prototype.exampleMapConfig = function() {
       var exampleConfig = {};
       exampleConfig.datasource = 'data/world-population.geo.json';
@@ -163,7 +175,7 @@
     // Render parts
     tulip.prototype.render = function() {
       this.mapConfig = new this.TulipMapConfigurationModel(
-        _.extend(this.defaultMapConfig(), this.exampleMapConfig()), 
+        this.options.mapConfig, 
         { app: this }
       );
       this.appView = new this.TulipMainAppView({

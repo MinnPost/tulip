@@ -379,7 +379,10 @@
     
     // Main template render
     render: function() {
-      this.$el.html(_.template(this.templates['configuration.html'])({ }));
+      this.$el.html(_.template(this.templates['configuration.html'])({
+        config: this.model.toJSON(),
+        app: this.options.app.options
+      }));
       this.stickit();
       this.handleUpload().makeAttributePicker();
       return this;
