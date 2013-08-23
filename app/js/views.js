@@ -476,11 +476,14 @@
       var $target = $(e.currentTarget);
       var id = _.uniqueId('tulip-id-');
       var map = this.options.map;
-      var image;
+      var title = this.options.map.model.get('fileName') || 'tulip-map';
+      var imageFormat = this.$el.find('#tulip-export-format').val() || 'png';
+      var image, title;
       
+      title = title.split('.')[0];
       map.$mapEl.find('svg').attr('id', id);
-      image = Pancake(id);
-      image.download('map.png');
+      image = Pancake(id, imageFormat);
+      image.download(title + '.' + imageFormat);
     },
     
     // Make attribute picker
